@@ -1,0 +1,332 @@
+body, html{
+	background-color: white;
+	color: #2a2a2a;
+	width: 100%;
+	height: 100%;
+	scroll-behavior: smooth;
+	font-style: normal;
+	margin:0;
+    padding:0;
+}
+
+h1 {
+	font-weight: 300;
+	font-style: normal;
+}
+
+p {
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-weight: 300;
+	font-style: normal;
+}
+
+a {
+	text-decoration: none;
+	color: #575757;
+	transition: 0.3s;
+}
+
+a:hover {
+	color: #8d8d8d;
+}
+
+.container {
+	display: flex; 
+	align-items: center; 
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+.row {
+	flex-direction: row;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.page-content {
+	width:100%;
+}
+
+/**Navbar**/
+#nav {
+	left: 0%;
+	right: 0%;
+	background-color: white;
+	position: fixed;
+	top: 0px;
+	display: block;
+	box-shadow: 2px 2px 4px #aaaaaa;
+	z-index: 1;
+}
+
+.nav-item:first-child {
+	float: left;
+}
+
+.nav-item {
+	color: #2a2a2a;
+	float: right;
+	display: block;
+	text-align: center;
+	padding: 20px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.nav-item:hover {
+	color: #575757;
+	transition: 0.5s;
+}
+
+.nav-item:hover:after {
+    transform: scaleX(1);
+}
+
+.nav-item::after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px #2a2a2a;
+    transform: scaleX(0);  
+    transition: 350ms ease-in-out;
+    transform-origin: 0% 50%;
+}
+
+/**Home**/
+#home-section {
+	height: 100vh;
+	display: flex; 
+	align-items: center; 
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+#landing-container {
+	padding-left: 4%;
+}
+
+#landing-text {
+	max-width:90%;
+	text-align: center;
+}
+
+.title {
+	max-width: 100%;
+	font-size: 350%;
+	margin-top: 5%;
+	margin-bottom: 2%;
+}
+
+.subtitle {
+	letter-spacing: 2px;
+	max-width: 100%;
+	font-size: 175%;
+}
+
+#typewriter {
+	font-size: 150%;
+}
+
+#main {
+	width: 350px;
+}
+
+.arrow {
+	border: solid black;
+	border-color: #2a2a2a;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 10px;
+	transform: rotate(45deg);
+  	-webkit-transform: rotate(45deg);
+  	margin: 10px;
+}
+
+.arrow:hover {
+	opacity: 60%;
+	transform: scale(1.25) rotate(45deg);
+}
+
+/**Education**/
+#text .subtitle {
+	margin-bottom: 40px;
+}
+
+#education-section {
+	font-size: 16px;
+	background-color: #F0F0F0;
+	padding: 50px;
+	padding-bottom: 80px;
+	min-height: 100vh;
+}
+
+#education1-title img {
+	width: 17%;
+}
+
+#education2-title img {
+	width: 17%;
+}
+
+#school1 {
+	align-items: flex-start;
+}
+
+#school2 {
+	align-items: flex-start;
+}
+
+#school1 p {
+	font-size: 14px;
+}
+
+#school1 * {
+	margin: 8px;
+}
+
+#school2 p {
+	font-size: 14px;
+}
+
+#school2 * {
+	margin: 8px;
+}
+
+#coursework1 {
+	align-items: flex-start;
+	font-size: 120%;
+}
+
+#coursework2 {
+	align-items: flex-start;
+	font-size: 120%;
+}
+
+li {
+	margin: 5px;
+}
+
+ul {
+	list-style-type: circle;
+}
+
+#progress {
+	font-size: 80%;
+}
+
+/**Projects**/
+#project-section {
+	padding: 50px;
+	min-height:100vh;
+}
+
+.each-project {
+	position: relative;
+	height: 400px;
+	width: 400px;
+	margin: 3%;
+	display: none;
+}
+
+.show {
+	display: block;
+  }
+
+.proj-img {
+	width: 400px;
+	height: 400px;
+	border-radius: 5px;
+}
+
+
+.proj-description {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #F8F8F8;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity .4s, visibility .4s;
+}
+
+.each-project:hover .proj-description {
+	visibility: visible;
+	opacity: 0.9;
+}
+
+.proj-description:hover {
+	opacity: 1;
+}
+
+.img-description {
+	transition: .5s;
+	color: #2a2a2a;
+	text-align: center;
+	margin-left: 25px;
+	margin-right: 25px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.img-description i, .img-description p, .img-description a {
+	font-family: 'Lato', sans-serif;
+	text-decoration: none;
+	font-weight: 100;
+	line-height: 24px;
+}
+
+.img-description i {
+	font-size: 12px;
+}
+
+.img-description:hover {
+	opacity: 1;
+}
+
+/**Footer**/
+
+#footer {
+	height: 6em;
+	text-align: center;
+	background-color: #F0F0F0;
+}
+
+#social-container * {
+	padding: 6px;
+	margin-bottom: 6px;
+}
+
+#social-container a {
+	color: #2a2a2a;
+	transition: .4s;
+}
+
+#social-container a:hover {
+	color: #8d8d8d;
+}
+
+#copyright {
+	color: #8d8d8d;
+	font-size:14px;
+}
+
+
+
+
+
+
+
+
+
+
+

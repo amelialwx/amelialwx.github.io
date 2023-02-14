@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1" />
+		<meta name="description" content="Christine Nguyen portfolio">
+		<meta name="keywords" content="Christine Nguyen, UC Berkeley">
+
+  		<link rel="stylesheet" href="assets/css/styles.css">
+  		<link rel="icon" href="assets/img/letter_a.png">
+		<link rel="stylesheet" href="https://use.typekit.net/ufg7hqz.css">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+		<title>Amelia Li</title>
+	</head>
+	<body>
+
+		<!--Navigation Bar-->
+		<div id="nav">
+			<a href="#home-section" class="nav-item right">AMELIA LI</a>
+			<a href="assets/Amelia_Li_Resume.pdf" class="nav-item left" target="_blank">RESUME</a>
+			<a href="#project-section" class="nav-item left">PROJECTS</a>
+			<a href="#education-section" class="nav-item left">EDUCATION</a>
+		</div>
+
+		<div class="page-content">
+			
+			<!--Home Page-->
+			<section id="home-section">
+				<div class="container row">
+					<div class="container row" id="landing-container">
+						<div class="container column" id="landing-text">
+							<h1 class="title">WEIXI (AMELIA) LI</h1>
+							<p id="typewriter"></p>
+						</div>
+						<img src="assets/img/main.jpg" id="main">
+					</div>
+					<a href="#education-section" class="arrow"></a>
+				</div>
+			</section>
+
+			<!--Education-->
+			<section class="container column parallax" id="education-section">
+				<div class="container column" id="text">
+					<h1 class="subtitle">EDUCATION</h1>
+					<div class="container col">
+						<div class="container row" id="education1-title">
+							<img src="assets/img/logo2.png">
+							<div class="container column" id="school1">
+								<h2>Harvard University</h2>
+								<h3>M.S. - Data Science</h3>
+								<p>Expected Graduation: May 2024</p>
+							</div>
+						</div>
+					</div>
+					<div class="container column" id="coursework1">
+						<h3>Relevant Coursework</h3>
+						<ul>
+							<li>Data Science 1: Introduction to Data Science (AC 209a)</li>
+							<li>Data Science 2: Advanced Topics in Data Science (AC 209b)*</li>
+							<li>Systems Development for Computational Science (AC 207)</li>
+							<li>Visualization (CS 171)</li>
+							<li>Generalized Linear Models (STAT 149)*</li>
+							<li>Critical Thinking in Data Science (AC 221)*</li>
+						</ul>
+						<p id="progress">*in progress</p>
+						<br>
+					</div>
+					<hr width="110%"/>
+					<div class="container row" id="education2-title" style="margin-top: 5vh;">
+						<img src="assets/img/logo1.png">
+						<div class="container column" id="school2">
+							<h2>University of California, Berkeley</h2>
+							<h3>B.A. - Data Science</h3>
+							<p>Domain Emphasis: Business & Industrial Analytics</p>
+							<p>Graduated: May 2022</p>
+						</div>
+					</div>
+					<div class="container column" id="coursework2">
+						<!--						<h3>Extracurriculars</h3>-->
+						<!--						<p>Undergraduate Student Instructor</p>-->
+						<!--						<ul>-->
+						<!--							<li>Directly taught the Data 8: Foundations of Data Science course to 120 students in-->
+						<!--								the Data Scholars program.</li>-->
+						<!--							<li>Conducted weekly office hours to provide individualized support and guidance to students.</li>-->
+						<!--							<li>Successfully scaled the program from 60 to 120 students in 1 semester.</li>-->
+						<!--						</ul>-->
+						<!--						<p>Peer Advocate Outreach Intern</p>-->
+						<!--						<ul>-->
+						<!--							<li>Advised newly admitted and continuing transfer students on how to navigate campus resources and opportunities.</li>-->
+						<!--							<li>Utilized Photoshop and Canva to create informative and eye-catching biweekly newsletters to update transfer <br> students-->
+						<!--								regarding the latest events and important reminders, garnering over 6,000 readers per release.</li>-->
+						<!--						</ul>-->
+						<h3>Relevant Coursework</h3>
+						<p><i>Data Science</i></p>
+						<ul>
+							<li>Foundations of Data Science (DATA 8)</li>
+							<li>Principles and Techniques of Data Science (DATA 100)</li>
+							<li>Data Structures (CS 61B)</li>
+							<li>Probability for Data Science (STAT 140)</li>
+							<li>Computational Structures in Data Science (CS 88)</li>
+							<li>Human Contexts and Ethics of Data (DATA 104)</li>
+							<li>Data Inference and Decisions (DATA 102)</li>
+							<li>Data Mining and Analytics (DATA 144)</li>
+							<li>Natural Language Processing (INFO 159)</li>
+							<li>Professional Preparation: Teaching of Probability and Statistics (STAT 375)</li>
+						</ul>
+						<p><i>Business and Industrial Analytics</i></p>
+						<ul>
+							<li>Economic Models (DATA 88)</li>
+							<li>Principles and Techniques of Data Science (Data 100)</li>
+							<li>Data and Decisions (UGBA 88)</li>
+							<li>Data Science for Smart Cities (CIVENG 88)</li>
+							<li>Industrial and Commercial Data Systems (INDENG 115)</li>
+							<li>Logistics Network Design and Supply Chain Management (INDENG 153)</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!--Project Section-->
+			<section class="container column" id="project-section">
+				<h1 class="subtitle">PROJECTS</h1>
+				<h2>Data</h2>
+				<div class="container row">
+					<div class="each-project python data">
+						<img class="proj-img" src="assets/img/Spotify.png"/>
+						<div class="proj-description container column">
+							<div class="img-description">
+								<h2>Spotify Success Prediction</h2>
+								<p>Performed Spotify tracks analysis (on song duration, genre, etc.) and success prediction (popularity percentile) using
+									<b>logistic regression, decision tree, k-nearest neighbors, random forest, and neural network</b>.</p>
+								<br>
+								<a href="https://github.com/amelialwx/Spotify-Prediction" target="_blank">Repo</a>
+								<br>
+								<br>
+								<i>Python, Jupyter Notebook, TensorFlow, scikit-learn</i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h2>Python</h2>
+				<div class="container row">
+					<div class="each-project python">
+						<img class="proj-img" src="assets/img/AutoDiff.png"/>
+						<div class="proj-description container column">
+							<div class="img-description">
+								<h2>AutoDiff</h2>
+								<p>Created an intuitive and beginner-friendly software library that performs forward mode (using <b>dual numbers</b>) and reverse
+									mode (using <b>computational graphs</b>) automatic differentiation. Installation available through Test PyPI.</p>
+								<br>
+								<a href="https://github.com/amelialwx/AutoDiff" target="_blank">Repo</a> / <a href="https://test.pypi.org/project/AutoDiff-Library/1.0/" target="_blank">Installation</a>
+								<br>
+								<br>
+								<i>Python, Git, GitHub, pytest</i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h2>HTML/CSS, Javascript</h2>
+				<div class="container row">
+					<div class="each-project web">
+						<img class="proj-img" src="assets/img/Disney.png"/>
+						<div class="proj-description container column">
+							<div class="img-description">
+								<h2>A Disney Story</h2>
+								<p>Utilized <b>D3.js, Bootstrap, and fullPage.js</b> to create a data visualization
+									webpage that walks viewers through the Disney timeline told in the perspective of Disney princesses.</p>
+								<br>
+								<a href="https://github.com/amelialwx/A-Disney-Story" target="_blank">Repo</a> / <a href="https://amelialwx.github.io/A-Disney-Story/" target="_blank">Website</a>
+								<br>
+								<br>
+								<i>HTML/CSS, Javascript (D3.js)</i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!--Footer/Contact-->
+			<section class="container column" id="footer">
+				<div class="container row" id="social-container">
+					<a href="https://www.linkedin.com/in/amelialwx/" target="_blank">LinkedIn</a>
+					<span>•</span>
+					<a href="https://github.com/amelialwx" target="_blank">GitHub</a>
+					<span>•</span>
+					<a href="mailto:weixili@g.harvard.edu" target="_blank">Email</a>
+				</div>
+			</section>
+
+		</div>
+		<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+		<script src="assets/scripts/scripts.js"></script>
+
+	</body>
+</html>
