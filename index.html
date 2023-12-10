@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#a789d4">
+
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title> Amelia Li </title>
+</head>
+
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Amelia</a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item ">
+                        <a href="#home" class="nav__link">
+                            <i class='bx bx-home'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item ">
+                        <a href="#about" class="nav__link">
+                            <i class='bx bx-user'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class='bx bx-folder'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#work" class="nav__link">
+                            <i class='bx bx-briefcase-alt-2'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#education" class="nav__link">
+                            <i class='bx bx-book'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class='bx bx-message-square-dots'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--=============== theme change button ===============-->
+            <i class='bx bx-moon change-theme change-theme-button' id="theme-button"></i>
+
+        </nav>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+        <!--=============== HOME ===============-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <span class="home__greeting">Hello, I'm</span>
+                    <h1 class="home__name">Amelia Li</h1>
+                    <h3 class="home__education" id="typewriter"></h3>
+
+                    <div class="home__button">
+                        <a href="https://www.github.com/amelialwx" target="_blank", class="button button--ghost">
+                            GitHub
+                        </a>
+
+                        <a href="#about" class="button">About</a>
+                    </div>
+                </div>
+
+                <div class="home__handle">
+                    <img src="assets/img/me.png" alt="" class="home__img">
+                </div>
+
+                <div class="home__social">
+                    <a href="mailto:weixili@g.harvard.edu" target="_blank" class="home__social-link">
+                        <i class='bx bxl-gmail'></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/amelialwx/" target="_blank" class="home__social-link">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://www.github.com/amelialwx" target="_blank" class="home__social-link">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                </div>
+
+                <a href="#about" class="home__scroll">
+                    <i class='bx bx-mouse home__scroll-icon'></i>
+                    <span class="home__scroll-name">Scroll Down</span>
+                </a>
+            </div>
+        </section>
+
+        <!--=============== ABOUT ===============-->
+        <section class="about section" id="about">
+            <span class="section__subtitle">My Intro</span>
+            <h2 class="section__title">About Me</h2>
+
+            <div class="about__container container grid">
+                <img src="assets/img/about.png" alt="" class="about__img">
+
+                <div class="about__data">
+                    <div class="about__info">
+                        <div class="about__box">
+                            <i class='bx bx-line-chart about__icon'></i>
+                            <h3 class="about__title">Studying</h3>
+                            <span class="about__subtitle">Data Science</span>
+                        </div>
+                        <div class="about__box">
+                            <i class='bx bx-briefcase-alt about__icon'></i>
+                            <h3 class="about__title">School</h3>
+                            <span class="about__subtitle">Harvard University</span>
+                        </div>
+                        <div class="about__box">
+                            <i class='bx bx-support about__icon'></i>
+                            <h3 class="about__title">Hobbies</h3>
+                            <span class="about__subtitle">Art and Gaming</span>
+                        </div>
+                    </div>
+
+                    <p class="about__description">
+                        👋 I'm Amelia, an aspiring data scientist from Singapore currently obtaining my Master's in Data Science in the US. 
+                        Feel free to reach out to me through email!
+                    </p>
+
+                    <a href="#contact" class="button about__button-contact">Chat with me!</a>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== SKILLS ===============-->
+        <section class="skills section" id="skills">
+            <span class="section__subtitle">My Abilities</span>
+            <h2 class="section__title">Skills</h2>
+
+            <div class="skills__container container grid">
+                <div class="skills__content">
+                    <h3 class="skills__title">Programming Languages</h3>
+
+                    <div class="skills__box">
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">Python</h3>
+                                    <span class="skills__level">Advanced</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">C++</h3>
+                                    <span class="skills__level">Advanced</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">SQL</h3>
+                                    <span class="skills__level">Intermediate</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">MATLAB</h3>
+                                    <span class="skills__level">Beginner</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">R</h3>
+                                    <span class="skills__level">Intermediate</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">HTML/CSS</h3>
+                                    <span class="skills__level">Intermediate</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">Javascript (d3.js)</h3>
+                                    <span class="skills__level">Intermediate</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills__content">
+                    <h3 class="skills__title">Machine Learning and Data Analytics</h3>
+
+                    <div class="skills__box">
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">A/B Testing</h3>
+                                    <span class="skills__level">Advanced</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">Random Forest</h3>
+                                    <span class="skills__level">Advanced</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">CNN</h3>
+                                    <span class="skills__level">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">KNN</h3>
+                                    <span class="skills__level">Advanced</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">Large Language Models</h3>
+                                    <span class="skills__level">Advanced</span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <i class='bx bxs-badge-check'></i>
+
+                                <div>
+                                    <h3 class="skills__name">NLP: ELMo/BERT/GPT</h3>
+                                    <span class="skills__level">Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills__container container grid">
+                    <div class="skills__content">
+                        <h3 class="skills__title">DevOps and MLOps</h3>
+    
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Docker</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Kubernetes</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Ansible</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">DVC</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">GCP</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Vertex AI</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">FastAPI</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="skills__container container grid">
+                    <div class="skills__content">
+                        <h3 class="skills__title">Data Science Tools and Frameworks</h3>
+    
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Git</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">GitHub</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">TensorFlow</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Matplotlib</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Pandas</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Excel</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Seaborn</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Tableau</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">PyTorch</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">Keras</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+    
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">scikit-learn</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class='bx bxs-badge-check'></i>
+    
+                                    <div>
+                                        <h3 class="skills__name">GEE</h3>
+                                        <span class="skills__level">Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+        </section>
+
+        <!--=============== SERVICES ===============-->
+        <section class="services section">
+            <span class="section__subtitle">My Experience</span>
+            <h2 class="section__title">Internships/Extracurriculars</h2>
+
+            <div class="services__container container grid">
+                <div class="services__card">
+                    <div class="serv">
+                        <h3 class="services__title">Data Science <br> Internship</h3>
+                        <p class="services__title"><i>Doctor Anywhere</i></p>
+                        
+                        <span class="services__button">
+                            See More <i class='bx bx-right-arrow services__icon'></i>
+                        </span>
+                    </div>
+
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <i class='bx bx-x services__modal-close'></i>
+
+                            <h3 class="services__modal-title">Data Science Internship</h3>
+
+                            <p class="services__modal-description">
+                                <b>Doctor Anywhere</b>
+                                <br>
+                                May 2023 - Aug 2023
+                            </p>
+                            <img src="assets/img/da.jpg" alt="" style="margin-left:auto; margin-right:auto; display:block; max-height:300px; width:auto; padding-bottom: 30px;">
+                            <p>
+                                This summer, I interned at Doctor Anywhere, a digital healthcare company, where I <b>developed a machine learning algorithm for TPA/B2B claim processing</b>. 
+                                Using OCR, key-value parsing, table parsing, and entity recognition, the algorithm enhanced claim efficiency and was <b>seamlessly integrated into 
+                                the company's app</b>.
+                                <br><br>
+                                In addition to the primary algorithm, I built utility tools for dataset benchmarking and model prototyping, boosting the accuracy from <b>66% to 84%</b>. 
+                                I also ventured into Large Language Models (LLMs) in healthcare, <b>creating a prototype to aid policyholders with insurance inquiries</b>.
+                                <br><br>
+                                I'm grateful for this enriching experience, which sharpened my technical skills and provided deep insights into technology deployment in healthcare. 
+                                The guidance from my team and mentors was invaluable, significantly shaping my professional development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__card">
+                    <h3 class="services__title">Graduate Teaching <br> Fellow</h3>
+                    <p class="services__title"><i>Harvard University</i></p>
+
+                    <span class="services__button">
+                        See More <i class='bx bx-right-arrow services__icon'></i>
+                    </span>
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <i class='bx bx-x services__modal-close'></i>
+
+                            <h3 class="services__modal-title">Graduate Teaching Fellow</h3>
+
+                            <p class="services__modal-description">
+                                <b>Harvard University</b>
+                                <br>
+                                Aug 2023 - Present
+                            </p>
+                            <img src="assets/img/cs109a.png" alt="" style="margin-left:auto; margin-right:auto; display:block; max-height:300px; width:auto; padding-bottom: 30px;">
+                            <p>
+                                As I embarked on my Fall 2023 semester, I found myself at the heart of nurturing future data scientists. For the CS209a: Intoduction to 
+                                Data Science course at Harvard University, my role involved <b>facilitating weekly office hours, offering crucial guidance and support in 
+                                Data Science</b>. These sessions have become a vibrant hub for learning, where students from diverse backgrounds share their insights and 
+                                challenges, enriching our collective understanding.
+                                <br><br>
+                                Moreover, <b>mentoring students in their data science projects</b> has been the most rewarding experience. Guiding them from conceptualization to 
+                                execution, I've seen them develop practical skills and a strong research aptitude. Their progress has been a testament to the power of 
+                                effective mentorship.
+                                <br><br>
+                                This semester has been a journey of mutual growth - a reaffirmation of the crucial role mentorship plays in the realm of data science. I look 
+                                forward to the continued evolution of my students and the invaluable lessons they teach me along the way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__card">
+                    <h3 class="services__title">Research <br> Assistant</h3>
+                    <p class="services__title"><i>Harvard LIT Lab</i></p>
+
+                    <span class="services__button">
+                        See More <i class='bx bx-right-arrow services__icon'></i>
+                    </span>
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <i class='bx bx-x services__modal-close'></i>
+
+                            <h3 class="services__modal-title">Research Assistant</h3>
+
+                            <p class="services__modal-description">
+                                <b>Harvard LIT Lab</b>
+                                <br>
+                                Sep 2022 - Present
+                            </p>
+                            <img src="assets/img/litlab.png" alt="" style="margin-left:auto; margin-right:auto; display:block; max-height:300px; width:auto; padding-bottom: 30px;">
+                            <p>
+                                In my first semester at Harvard, I joined the Harvard LIT Lab to work on a groundbreaking project. Our aim was to <b>detect stress in coding environments
+                                using non-survey methods</b> like analyzing micro-gestures, facial expressions, and coding patterns.
+                                <br><br>
+                                We focused on physical cues, using <b>meticulously cleaned and preprocessed 17-point joint data from 3D Kinect captures and facial expressions 
+                                from videos</b>. This approach helped us observe stress signs beyond conventional surveys. Additionally, I <b>converted Jupyter Notebook logs into 
+                                Abstract Syntax Trees (ASTs)</b> to understand stress through changes in coding behavior.
+                                <br><br>
+                                This project was a unique blend of data science, education, and psychology, offering new insights into the human aspect of coding. It was an invaluable 
+                                experience, shaping my understanding of technology's interaction with human emotions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services__card">
+                    <div class="serv">
+                        <h3 class="services__title">Undergraduate <br> Student Instructor</h3>
+                        <p class="services__title"><i>UC Berkeley</i></p>
+                        
+                        <span class="services__button">
+                            See More <i class='bx bx-right-arrow services__icon'></i>
+                        </span>
+                    </div>
+
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <i class='bx bx-x services__modal-close'></i>
+
+                            <h3 class="services__modal-title">Undergraduate Student Instructor</h3>
+
+                            <p class="services__modal-description">
+                                <b>University of California, Berkeley</b>
+                                <br>
+                                May 2021 - May 2022
+                            </p>
+                            <img src="assets/img/d8.png" alt="" style="margin-left:auto; margin-right:auto; display:block; max-height:300px; width:auto; padding-bottom: 30px;">
+                            <p>
+                                In my role as an Undergraduate Student Instructor at UC Berkeley, I had the privilege of directly teaching the Data 8: Foundations of Data Science 
+                                course. My audience was a group of 120 students enrolled in the Data Scholars program, each eager to dive into the world of data science and statistics.
+                                <br><br>
+                                Each week, I <b>created and delivered lectures, complementing them with tailored worksheets</b> to reinforce key concepts in data science and statistics. 
+                                This approach not only facilitated learning but also encouraged active engagement among students.
+                                <br><br>
+                                One of the most rewarding achievements during my tenure was successfully scaling the program. In just one semester, <b>we doubled the number of participants 
+                                from 60 to 120 students</b>, a testament to the program's growing popularity and effectiveness.
+                                <br><br>
+                                This experience was incredibly fulfilling, allowing me to contribute to shaping the next generation of data scientists. It underscored the 
+                                importance of clear communication, effective teaching methodologies, and the adaptability required to scale educational programs successfully.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== WORK ===============-->
+        <section class="work section" id="work">
+            <span class="section__subtitle">My Portfolio</span>
+            <h2 class="section__title">Recent Projects</h2>
+
+            <div class="work__filters">
+                <span class="work__item active-work" data-filter='all'>All</span>
+                <span class=" work__item" data-filter='.data'>Data</span>
+                <span class=" work__item" data-filter='.web'>Web</span>
+                <span class=" work__item" data-filter='.dev'>Dev</span>
+            </div>
+
+            <div class="work__container container grid">
+                <div class="work__card mix dev">
+                    <img src="assets/img/autodiff.png" alt="" class="work__img">
+
+                    <h3 class="work__title">AutoDiff</h3>
+
+                    <a href="https://github.com/amelialwx/AutoDiff" target="_blank" class="work__button">
+                        Repo <i class='bx bx-right-arrow work__icon'></i>
+                    </a>
+                </div>
+
+                <div class="work__card mix data">
+                    <img src="assets/img/gutenberg.png" alt="" class="work__img">
+
+                    <h3 class="work__title">Gutenberg Analysis</h3>
+
+                    <a href="https://github.com/amelialwx/BERT-Gutenberg-Analysis" target="_blank" class="work__button">
+                        Repo <i class='bx bx-right-arrow work__icon'></i>
+                    </a>
+                </div>
+
+                <div class="work__card mix data">
+                    <img src="assets/img/spotify.png" alt="" class="work__img">
+
+                    <h3 class="work__title">Spotify Song Prediction</h3>
+
+                    <a href="https://github.com/amelialwx/Spotify-Prediction" target="_blank" class="work__button">
+                        Repo <i class='bx bx-right-arrow work__icon'></i>
+                    </a>
+                </div>
+
+                <div class="work__card mix data">
+                    <img src="assets/img/movie.png" alt="" class="work__img">
+
+                    <h3 class="work__title">Movie Recommendation</h3>
+
+                    <a href="https://github.com/amelialwx/Movie-Recommendation" target="_blank" class="work__button">
+                        Repo <i class='bx bx-right-arrow work__icon'></i>
+                    </a>
+                </div>
+
+                <div class="work__card mix web">
+                    <img src="assets/img/disney.png" alt="" class="work__img">
+
+                    <h3 class="work__title">A Disney Story</h3>
+
+                    <a href="https://github.com/amelialwx/A-Disney-Story" target="_blank" class="work__button">
+                        Repo <i class='bx bx-right-arrow work__icon'></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!--=============== EDUCATION ===============-->
+        <section class="education section", id="education">
+            <span class="section__subtitle">My Academics</span>
+            <h2 class="section__title">Education</h2>
+
+            <div class="education__container container swiper">
+                <div class="education__card swiper-slide">
+                    <img src="assets/img/harvard.png" alt="" class="education__img">
+
+                    <h3 class="education__name">Harvard University</h3>
+                    <p>
+                        M.S. Data Science
+                        <br>
+                        <i>Graduating: May 2024</i>
+                    </p>
+                    <br>
+                    <p class="education__description">
+                        <b><u>RELEVANT COURSEWORK</u></b>
+                    </p>
+                    <ul class="services__modal-list">
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Data Science 1: Introduction to Data Science [AC 209a] 
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Data Science 2: Advanced Topics in Data Science [AC 209b]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Systems Development for Computational Science [AC 207]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Visualization [CS 171]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Generalized Linear Models [STAT 149]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Critical Thinking in Data Science [AC 221]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-circle'></i>
+                            <p class="services__modal-info">
+                                Advanced Practical Data Science, MLOps [AC 215]
+                            </p>
+                        </li>
+                        
+                        <li class="services__modal-item">
+                            <i class='bx bx-circle'></i>
+                            <p class="services__modal-info">
+                                Computational Science and Engineering Capstone Project [AC 297r]
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="education__card swiper-slide">
+                    <img src="assets/img/ucberkeley.png" alt="" class="education__img">
+
+                    <h3 class="education__name">University of California, Berkeley</h3>
+                    <p>
+                        B.A. Data Science [Domain Emphasis: Business and Industrial Analytics]
+                        <br>
+                        <i>Graduated: May 2022</i>
+                    </p>
+                    <br>
+                    <p class="education__description">
+                        <b><u>RELEVANT COURSEWORK</u></b>
+                    </p>
+                    <p class="education__description">
+                        Data Science
+                    </p>
+                    <ul class="services__modal-list">
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Foundations of Data Science [Data 8]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Principals and Techniques of Data Science [Data 100]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Data Structures [CS 61B]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Probability for Data Science [STAT 140]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Computational Structures in Data Science [CS 88]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Human Context and Ethics of Data [DATA 104]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Data Inference and Decisions [DATA 102]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Data Mining and Analytics [DATA 144]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Natural Language Processing [INFO 159]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Professional Preparation: Teaching of Probability and Statistics [STAT 375]
+                            </p>
+                        </li>
+                    </ul>
+                    <br>
+                    <p class="education__description">
+                        Business and Industrial Analytics
+                    </p>
+                    <ul class="services__modal-list">
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Economic Models [DATA 88]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Data and Decisions [UGBA 88]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Data Science for Smart Cities [CIVENG 88]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Industrial and Commercial Data Systems [INDENG 115]
+                            </p>
+                        </li>
+
+                        <li class="services__modal-item">
+                            <i class='bx bx-check-circle'></i>
+                            <p class="services__modal-info">
+                                Logistics Network Design and Supply Chain Management [INDENG 153]
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!--=============== CONTACT ===============-->
+        <section class="contact section" id="contact">
+            <sapn class="section__subtitle">Get in touch</sapn>
+            <h3 class="section__title">Contact Me</h3>
+
+            <div class="contact__container container grid">
+                <div class="contact__content">
+                    <h3 class="contact__title contact__title-info">My socials!</h3>
+
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <i class='bx bx-mail-send contact__card-icon'></i>
+                            <h3 class="contact__card-title">Email</h3>
+                            <span class="contact__card-data">weixili@g.harvard.edu</span>
+
+                            <a href="mailto:weixili@g.harvard.edu" target="_blank" class="contact__button">
+                                Email <i class='bx bx-right-arrow contact__button-icon'></i>
+                            </a>
+                        </div>
+
+                        <div class="contact__card">
+                            <i class='bx bxl-github contact__card-icon'></i>
+                            <h3 class="contact__card-title">Github</h3>
+                            <span class="contact__card-data">amelialwx</span>
+
+                            <a href="https://www.github.com/amelialwx" target="_blank"
+                                class="contact__button">
+                                View <i class='bx bx-right-arrow contact__button-icon'></i>
+                            </a>
+                        </div>
+
+                        <div class="contact__card">
+                            <i class='bx bxl-linkedin contact__card-icon'></i>
+                            <h3 class="contact__card-title">LinkedIn</h3>
+                            <span class="contact__card-data">amelialwx</span>
+
+                            <a href="https://www.linkedin.com/in/amelialwx" target="_blank" class="contact__button">
+                                View <i class='bx bx-right-arrow contact__button-icon'></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__content">
+                    <h3 class="contact__title contact__title-form">Write me your message!</h3>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__form-div">
+                            <label for="" class="contact__form-tag">Name</label>
+                            <input type="text" placeholder="your name" class="contact__form-input">
+                        </div>
+
+                        <div class="contact__form-div">
+                            <label for="" class="contact__form-tag">Email</label>
+                            <input type="text" placeholder="your email" class="contact__form-input">
+                        </div>
+
+                        <div class="contact__form-div contact__form-area">
+                            <label for="" class="contact__form-tag">Message</label>
+                            <textarea name="" id="" cols="30" rows="10" placeholder="your message"
+                                class="contact__form-input "></textarea>
+                        </div>
+
+
+                        <button class="button">
+                            Send message
+                        </button>
+                    </form>
+
+                </div>
+
+        </section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Amelia</h1>
+
+            <ul class="footer__list">
+
+                <li class="footer__item">
+                    <a href="#" class="footer__link">Home</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#about" class="footer__link">About</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#skills" class="footer__link">Skills</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#work" class="footer__link">Work</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#education" class="footer__link">Education</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#contact" class="footer__link">Contact</a>
+                </li>
+            </ul>
+
+            <ul class="footer__social">
+                <li class="footer__social-item">
+                    <a href="mailto:weixili@g.harvard.edu" target="_blank" class="footer__social-link">
+                        <i class='bx bxl-gmail footer__social-icon'></i>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="https://www.github.com/amelialwx" target="_blank" class="footer__social-link">
+                        <i class='bx bxl-github footer__social-icon'></i>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="https://www.linkedin.com/in/amelialwx" target="_blank" class="footer__social-link">
+                        <i class='bx bxl-linkedin footer__social-icon'></i>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="https://www.instagram.com/dplyrr" target="_blank" class="footer__social-link">
+                        <i class='bx bxl-instagram footer__social-icon'></i>
+                    </a>
+                </li>
+            </ul>
+
+            <span class="footer__copy">
+                Made with ♡ by Amelia Li &#169; 2023.
+            </span>
+        </div>
+    </footer>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--=============== MIXITUP FILTER ===============-->
+    <script src="assets/js/mixitup.min.js"></script>
+
+    <!--=============== TYPEWRITER ===============-->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
