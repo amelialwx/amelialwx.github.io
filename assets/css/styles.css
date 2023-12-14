@@ -116,10 +116,11 @@ img {
   font-size: 1.25rem;
   cursor: pointer;
   transition: 0.3s;
+  color: var(--first-color);
 }
 
 .change__theme:hover {
-  color: var(--first-color);
+  color: var(--first-color-alt);
 }
 
 /*========== Variables light theme ==========*/
