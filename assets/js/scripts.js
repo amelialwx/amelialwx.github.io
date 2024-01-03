@@ -75,7 +75,7 @@ function w3RemoveClass(element, name) {
 // }
 
 // JavaScript to close the modal when clicking outside
-document.querySelector('.services__modal').addEventListener('click', function(event) {
+document.querySelector('.experience__modal').addEventListener('click', function(event) {
   // Checking if the clicked area is not the modal content
   if (event.target === this) {
       // Close the modal

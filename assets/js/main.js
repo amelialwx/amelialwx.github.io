@@ -7,11 +7,11 @@ function scrollHeader() {
 }
 window.addEventListener("scroll", scrollHeader);
 
-/*=============== SERVICES MODAL ===============*/
+/*=============== EXPERIENCE MODAL ===============*/
 // Get the modal
-const modalViews = document.querySelectorAll(".services__modal"),
-  modalBtns = document.querySelectorAll(".services__button"),
-  modalClose = document.querySelectorAll(".services__modal-close");
+const modalViews = document.querySelectorAll(".experience__modal"),
+  modalBtns = document.querySelectorAll(".experience__button"),
+  modalClose = document.querySelectorAll(".experience__modal-close");
 
 // Function to open the modal
 let modal = function (modalClick) {
@@ -48,7 +48,7 @@ modalViews.forEach((mv) => {
 });
 
 // Prevent modal content click from closing the modal
-document.querySelectorAll(".services__modal-content").forEach((content) => {
+document.querySelectorAll(".experience__modal-content").forEach((content) => {
   content.addEventListener("click", function(event) {
     event.stopPropagation(); // Prevents the modal from closing when clicking inside
   });
@@ -212,7 +212,7 @@ sr.reveal(`.skills__content`, {
   distance: "30px",
 });
 
-sr.reveal(`.services__title, services__button`, {
+sr.reveal(`.experience__title, experience__button`, {
   delay: 100,
   scale: 0.9,
   origin: "top",
