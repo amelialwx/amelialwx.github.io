@@ -496,7 +496,7 @@
         </section>
 
         <!--=============== EXPERIENCE ===============-->
-        <section class="experience section">
+        <section class="experience section" id="experience">
             <span class="section__subtitle">My Experience</span>
             <h2 class="section__title">Internships/Extracurriculars</h2>
 
@@ -540,12 +540,14 @@
                 </div>
 
                 <div class="experience__card">
-                    <h3 class="experience__title">Graduate Teaching <br> Fellow</h3>
-                    <p class="experience__title"><i>Harvard University</i></p>
+                    <div class="exp">
+                        <h3 class="experience__title">Graduate Teaching <br> Fellow</h3>
+                        <p class="experience__title"><i>Harvard University</i></p>
 
-                    <span class="experience__button">
-                        See More <i class='bx bx-right-arrow experience__icon'></i>
-                    </span>
+                        <span class="experience__button">
+                            See More <i class='bx bx-right-arrow experience__icon'></i>
+                        </span>
+                    </div>
 
                     <div class="experience__modal">
                         <div class="experience__modal-content">
@@ -577,12 +579,14 @@
                 </div>
 
                 <div class="experience__card">
-                    <h3 class="experience__title">Research <br> Assistant</h3>
-                    <p class="experience__title"><i>Harvard LIT Lab</i></p>
+                    <div class="exp">
+                        <h3 class="experience__title">Research <br> Assistant</h3>
+                        <p class="experience__title"><i>Harvard LIT Lab</i></p>
 
-                    <span class="experience__button">
-                        See More <i class='bx bx-right-arrow experience__icon'></i>
-                    </span>
+                        <span class="experience__button">
+                            See More <i class='bx bx-right-arrow experience__icon'></i>
+                        </span>
+                    </div>
 
                     <div class="experience__modal">
                         <div class="experience__modal-content">
@@ -612,7 +616,7 @@
                 </div>
 
                 <div class="experience__card">
-                    <div class="serv">
+                    <div class="exp">
                         <h3 class="experience__title">Undergraduate <br> Student Instructor</h3>
                         <p class="experience__title"><i>UC Berkeley</i></p>
                         
@@ -663,59 +667,102 @@
                 <span class=" work__item" data-filter='.data'>Data</span>
                 <span class=" work__item" data-filter='.web'>Web</span>
                 <span class=" work__item" data-filter='.dev'>Dev</span>
+                <span class=" work__item" data-filter='.game'>Game</span>
             </div>
 
             <div class="work__container container grid">
+                <div class="work__card mix data game">
+                    <div class="wrk">
+                        <img src="assets/img/pixel_purr-suit.gif" alt="" class="work__img">
+
+                        <h3 class="work__title">Pixel Purr-suit</h3>
+
+                        <a href="https://github.com/amelialwx/Pixel_Purr-suit" target="_blank" class="work__button">
+                            Repo <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work__card mix data dev">
+                    <div class="wrk">
+                        <img src="assets/img/platepals.png" alt="" class="work__img">
+
+                        <h3 class="work__title">PlatePals</h3>
+
+                        <a href="https://github.com/amelialwx/AC215_PlatePals" target="_blank" class="work__button">
+                            Repo <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                        <a href="https://amelialwx.medium.com/platepals-revolutionizing-nutritional-awareness-with-ai-5b4cc45d5d44" target="_blank" class="work__button">
+                            Blog <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="work__card mix dev">
-                    <img src="assets/img/autodiff.png" alt="" class="work__img">
+                    <div class="wrk">
+                        <img src="assets/img/autodiff.png" alt="" class="work__img">
 
-                    <h3 class="work__title">AutoDiff</h3>
+                        <h3 class="work__title">AutoDiff</h3>
 
-                    <a href="https://github.com/amelialwx/AutoDiff" target="_blank" class="work__button">
-                        Repo <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
+                        <a href="https://github.com/amelialwx/AutoDiff" target="_blank" class="work__button">
+                            Repo <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                        <a href="https://test.pypi.org/project/AutoDiff-Library/1.0/" target="_blank" class="work__button">
+                            Download <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="work__card mix data">
-                    <img src="assets/img/gutenberg.png" alt="" class="work__img">
+                    <div class="wrk">
+                        <img src="assets/img/gutenberg.png" alt="" class="work__img">
 
-                    <h3 class="work__title">Gutenberg Analysis</h3>
+                        <h3 class="work__title">Gutenberg Analysis</h3>
 
-                    <a href="https://github.com/amelialwx/BERT-Gutenberg-Analysis" target="_blank" class="work__button">
-                        Repo <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
+                        <a href="https://github.com/amelialwx/BERT-Gutenberg-Analysis" target="_blank" class="work__button">
+                            Repo <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="work__card mix data">
-                    <img src="assets/img/spotify.png" alt="" class="work__img">
+                    <div class="wrk">
+                        <img src="assets/img/spotify.png" alt="" class="work__img">
 
-                    <h3 class="work__title">Spotify Song Prediction</h3>
+                        <h3 class="work__title">Spotify Song Prediction</h3>
 
-                    <a href="https://github.com/amelialwx/Spotify-Prediction" target="_blank" class="work__button">
-                        Repo <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
+                        <a href="https://github.com/amelialwx/Spotify-Prediction" target="_blank" class="work__button">
+                            Repo <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="work__card mix data">
-                    <img src="assets/img/movie.png" alt="" class="work__img">
+                    <div class="wrk">
+                        <img src="assets/img/movie.png" alt="" class="work__img">
 
-                    <h3 class="work__title">Movie Recommendation</h3>
+                        <h3 class="work__title">Movie Recommendation</h3>
 
-                    <a href="https://github.com/amelialwx/Movie-Recommendation" target="_blank" class="work__button">
-                        Repo <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
+                        <a href="https://github.com/amelialwx/Movie-Recommendation" target="_blank" class="work__button">
+                            Repo <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="work__card mix web">
-                    <img src="assets/img/disney.png" alt="" class="work__img">
+                    <div class="wrk">
+                        <img src="assets/img/disney.png" alt="" class="work__img">
 
-                    <h3 class="work__title">A Disney Story</h3>
+                        <h3 class="work__title">A Disney Story</h3>
 
-                    <a href="https://github.com/amelialwx/A-Disney-Story" target="_blank" class="work__button">
-                        Repo <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
+                        <a href="https://github.com/amelialwx/A-Disney-Story" target="_blank" class="work__button">
+                            Repo <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                        <a href="https://amelialwx.github.io/A-Disney-Story/" target="_blank" class="work__button">
+                            Website <i class='bx bx-right-arrow work__icon'></i>
+                        </a>
+                    </div>
                 </div>
-
             </div>
         </section>
 

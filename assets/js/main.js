@@ -9,40 +9,89 @@ window.addEventListener("scroll", scrollHeader);
 
 /*=============== EXPERIENCE MODAL ===============*/
 // Get the modal
-const modalViews = document.querySelectorAll(".experience__modal"),
-  modalBtns = document.querySelectorAll(".experience__button"),
-  modalClose = document.querySelectorAll(".experience__modal-close");
+const expModalViews = document.querySelectorAll(".experience__modal"),
+  expModalBtns = document.querySelectorAll(".experience__button"),
+  expModalClose = document.querySelectorAll(".experience__modal-close");
 
 // Function to open the modal
-let modal = function (modalClick) {
-  modalViews[modalClick].classList.add("active-modal");
+let expModal = function (modalClick) {
+  expModalViews[modalClick].classList.add("active-exp-modal");
 };
 
 // Function to close the modal
-let closeModal = function () {
-  modalViews.forEach((mv) => {
-    mv.classList.remove("active-modal");
+let expCloseModal = function () {
+  expModalViews.forEach((mv) => {
+    mv.classList.remove("active-exp-modal");
   });
 };
 
 // Event listener for each modal button to open the modal
-modalBtns.forEach((mb, i) => {
+expModalBtns.forEach((mb, i) => {
   mb.addEventListener("click", () => {
-    modal(i);
+    expModal(i);
+    console.log(i)
   });
 });
 
 // Event listener for each close button to close the modal
-modalClose.forEach((mc) => {
-  mc.addEventListener("click", closeModal);
+expModalClose.forEach((mc) => {
+  mc.addEventListener("click", expCloseModal);
 });
 
 // Event listener for clicking outside the modal content
-modalViews.forEach((mv) => {
+expModalViews.forEach((mv) => {
   mv.addEventListener("click", function(event) {
     // Checking if the clicked area is the modal content or its children
     if (event.target === this) {
-      closeModal();
+      expCloseModal();
+    }
+  });
+});
+
+// Prevent modal content click from closing the modal
+document.querySelectorAll(".experience__modal-content").forEach((content) => {
+  content.addEventListener("click", function(event) {
+    event.stopPropagation(); // Prevents the modal from closing when clicking inside
+  });
+});
+
+/*=============== WORK MODAL ===============*/
+// Get the modal
+const workModalViews = document.querySelectorAll(".work__modal"),
+  workModalBtns = document.querySelectorAll(".work__button"),
+  workModalClose = document.querySelectorAll(".work__modal-close");
+
+// Function to open the modal
+let workModal = function (modalClick) {
+  workModalViews[modalClick].classList.add("active-work-modal");
+};
+
+// Function to close the modal
+let workCloseModal = function () {
+  workModalViews.forEach((mv) => {
+    mv.classList.remove("active-work-modal");
+  });
+};
+
+// Event listener for each modal button to open the modal
+workModalBtns.forEach((mb, i) => {
+  mb.addEventListener("click", () => {
+    workModal(i);
+    console.log(i)
+  });
+});
+
+// Event listener for each close button to close the modal
+workModalClose.forEach((mc) => {
+  mc.addEventListener("click", workCloseModal);
+});
+
+// Event listener for clicking outside the modal content
+workModalViews.forEach((mv) => {
+  mv.addEventListener("click", function(event) {
+    // Checking if the clicked area is the modal content or its children
+    if (event.target === this) {
+      workCloseModal();
     }
   });
 });

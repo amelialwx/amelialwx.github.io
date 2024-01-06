@@ -62,23 +62,4 @@ function w3RemoveClass(element, name) {
     }
   }
   element.className = arr1.join(" ");
-}
-
-// var btnContainer = document.getElementById("button-section");
-// var btns = btnContainer.getElementsByClassName("filter-button");
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function(){
-//     var current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active";
-//   });
-// }
-
-// JavaScript to close the modal when clicking outside
-document.querySelector('.experience__modal').addEventListener('click', function(event) {
-  // Checking if the clicked area is not the modal content
-  if (event.target === this) {
-      // Close the modal
-      this.style.display = 'none';
-  }
-});
+};
