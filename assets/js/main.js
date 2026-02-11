@@ -302,3 +302,7 @@ sr.reveal(`.footer, footer__container`, {
   origin: "bottom",
   distance: "30px",
 });
+
+/*=============== FOOTER YEAR ===============*/
+const currentYear = document.getElementById("current-year");
+if (currentYear) currentYear.textContent = new Date().getFullYear();
