@@ -6,19 +6,19 @@ var typewriter = new Typewriter(type, {
     deleteSpeed:20
 });
 
-typewriter.typeString("Student at Harvard University.")
+typewriter.typeString("AI Engineer.")
     .pauseFor(1000)
     .deleteAll()
     .pauseFor(500)
-    .typeString("Studying MS Data Science.")
+    .typeString("Data Scientist.")
     .pauseFor(1000)
     .deleteAll()
     .pauseFor(500)
-    .typeString("Aspiring Data Scientist.")
+    .typeString("Harvard alum (MS Data Science).")
     .pauseFor(1000)
     .deleteAll()
     .pauseFor(500)
-    .typeString('Probably rewatching "the office" for the nth time.')
+    .typeString('Probably rewatching "The Office: Superfan Episodes" for the nth time.')
     .pauseFor(1000)
     .deleteAll()
     .pauseFor(500)
