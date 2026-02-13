@@ -222,6 +222,18 @@ const sr = ScrollReveal({
   delay: 400,
   reset: true,
 });
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!prefersReducedMotion) {
+  const sr = ScrollReveal({
+    origin: "top",
+    distance: "32px",
+    duration: 900,
+    delay: 120,
+    reset: true,
+    viewFactor: 0.2,
+    viewOffset: { top: 50, right: 0, bottom: 80, left: 0 },
+  });
 
 sr.reveal(`.nav__menu`, {
   delay: 100,
@@ -229,16 +241,30 @@ sr.reveal(`.nav__menu`, {
   origin: "bottom",
   distance: "300px",
 });
+  sr.reveal(`.nav__menu`, {
+    delay: 80,
+    scale: 0.98,
+    origin: "bottom",
+    distance: "20px",
+  });
 
 sr.reveal(`.home__data`);
 sr.reveal(`.home__handle`, {
   delay: 100,
 });
+  sr.reveal(`.home__data`, { delay: 140 });
+  sr.reveal(`.home__handle`, {
+    delay: 180,
+  });
 
 sr.reveal(`.home__social, .home__scroll`, {
   delay: 100,
   origin: "bottom",
 });
+  sr.reveal(`.home__social, .home__scroll`, {
+    delay: 180,
+    origin: "bottom",
+  });
 
 sr.reveal(`.about__img`, {
   delay: 100,
@@ -246,6 +272,11 @@ sr.reveal(`.about__img`, {
   scale: 0.9,
   distance: "30px",
 });
+  sr.reveal(`.about__img`, {
+    delay: 120,
+    origin: "left",
+    scale: 0.97,
+  });
 
 sr.reveal(`.about__data, .about__description, .about__button-contact`, {
   delay: 100,
@@ -253,6 +284,11 @@ sr.reveal(`.about__data, .about__description, .about__button-contact`, {
   origin: "right",
   distance: "30px",
 });
+  sr.reveal(`.about__data, .about__description, .about__button-contact`, {
+    delay: 120,
+    scale: 0.97,
+    origin: "right",
+  });
 
 sr.reveal(`.skills__content`, {
   delay: 100,
@@ -260,6 +296,12 @@ sr.reveal(`.skills__content`, {
   origin: "bottom",
   distance: "30px",
 });
+  sr.reveal(`.skills__content`, {
+    delay: 120,
+    scale: 0.97,
+    origin: "bottom",
+    interval: 100,
+  });
 
 sr.reveal(`.experience__title, experience__button`, {
   delay: 100,
@@ -267,6 +309,12 @@ sr.reveal(`.experience__title, experience__button`, {
   origin: "top",
   distance: "30px",
 });
+  sr.reveal(`.experience__title, .experience__button`, {
+    delay: 120,
+    scale: 0.97,
+    origin: "top",
+    interval: 80,
+  });
 
 sr.reveal(`.work__card`, {
   delay: 100,
@@ -274,6 +322,12 @@ sr.reveal(`.work__card`, {
   origin: "bottom",
   distance: "30px",
 });
+  sr.reveal(`.work__card`, {
+    delay: 120,
+    scale: 0.97,
+    origin: "bottom",
+    interval: 100,
+  });
 
 sr.reveal(`.education__container`, {
   delay: 100,
@@ -281,6 +335,11 @@ sr.reveal(`.education__container`, {
   origin: "bottom",
   distance: "30px",
 });
+  sr.reveal(`.education__container`, {
+    delay: 120,
+    scale: 0.97,
+    origin: "bottom",
+  });
 
 sr.reveal(`.contact__info, .contact__title-info`, {
   delay: 100,
@@ -288,6 +347,11 @@ sr.reveal(`.contact__info, .contact__title-info`, {
   origin: "left",
   distance: "30px",
 });
+  sr.reveal(`.contact__info, .contact__title-info`, {
+    delay: 120,
+    scale: 0.97,
+    origin: "left",
+  });
 
 sr.reveal(`.contact__form, .contact__title-form`, {
   delay: 100,
@@ -295,6 +359,11 @@ sr.reveal(`.contact__form, .contact__title-form`, {
   origin: "right",
   distance: "30px",
 });
+  sr.reveal(`.contact__form, .contact__title-form`, {
+    delay: 120,
+    scale: 0.97,
+    origin: "right",
+  });
 
 sr.reveal(`.footer, footer__container`, {
   delay: 100,
@@ -302,6 +371,12 @@ sr.reveal(`.footer, footer__container`, {
   origin: "bottom",
   distance: "30px",
 });
+  sr.reveal(`.footer, .footer__container`, {
+    delay: 120,
+    scale: 0.97,
+    origin: "bottom",
+  });
+}
 
 /*=============== FOOTER YEAR ===============*/
 const currentYear = document.getElementById("current-year");
