@@ -986,6 +986,16 @@ body.light-theme {
   background-color: var(--first-color-alt);
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
@@ -1063,7 +1073,8 @@ body.light-theme {
 
   .about__description {
     padding: 1rem 5rem;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     margin: 0 auto 2rem auto;
   }
 
@@ -1094,7 +1105,7 @@ body.light-theme {
   }
 
   .experience__modal-content {
-    width: 600px;
+    width: min(600px, 100%);
     padding: 4.5rem 2.5rem 2.5rem;
   }
 
@@ -1112,7 +1123,8 @@ body.light-theme {
   }
 
   .education__container {
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     margin: auto;
   }
 
@@ -1131,6 +1143,7 @@ body.light-theme {
   .contact__form {
     width: 340px;
   }
+}
 
 /* For large devices */
 @media screen and (min-width: 992px) {
@@ -1216,7 +1229,7 @@ body.light-theme {
   }
 
   .experience__modal-content {
-    width: 1000px;
+    width: min(1000px, 100%);
     padding: 4.5rem 2.5rem 2.5rem;
   }
 
@@ -1272,5 +1285,4 @@ body.light-theme {
     padding: 0.4rem;
     border-radius: 0.5rem;
   }
-}
 }
