@@ -85,6 +85,18 @@ body {
   transition: 0.4s; /* for light mode animation */
 }
 
+/*
+  Hide main + footer until ScrollReveal is ready (see main.js).
+  Do NOT hide .header: SR can’t initialize logo / nav / theme correctly when the
+  header is visibility:hidden, so those controls stayed invisible.
+*/
+html.sr-pending .main,
+html.sr-pending .footer {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 h1,
 h2,
 h3 {
@@ -123,6 +135,8 @@ img {
 }
 
 /*========== Variables light theme ==========*/
+/* html.light-theme: set from inline <head> script before CSS loads (avoids flash). */
+html.light-theme,
 body.light-theme {
   --title-color: hsl(var(--second-hue), 15%, 15%);
   --text-color: hsl(var(--second-hue), 8%, 35%);
@@ -275,6 +289,30 @@ body.light-theme {
   transition: 0.4s;
   display: flex;
   border-radius: 5rem;
+}
+
+.nav__theme-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  z-index: calc(var(--z-fixed) + 1);
+}
+
+.nav__daily-log {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color-light);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav__daily-log:hover {
+  color: var(--first-color);
+}
+
+.light-theme .nav__daily-log:hover {
+  color: var(--first-color);
 }
 
 /* Active link */

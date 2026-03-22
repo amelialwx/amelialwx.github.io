@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sr-pending">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,25 @@
     <!--=============== FAVICON ===============-->
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#f0aace">
+
+    <!-- Theme before any stylesheet so first paint uses correct CSS variables (no dark flash) -->
+    <script>
+    (function () {
+      try {
+        var FIX = "theme-label-fix";
+        var KEY = "selected-theme";
+        if (!localStorage.getItem(FIX)) {
+          var t = localStorage.getItem(KEY);
+          if (t === "dark") localStorage.setItem(KEY, "light");
+          else if (t === "light") localStorage.setItem(KEY, "dark");
+          localStorage.setItem(FIX, "1");
+        }
+        if (localStorage.getItem(KEY) === "light") {
+          document.documentElement.classList.add("light-theme");
+        }
+      } catch (e) {}
+    })();
+    </script>
 
     <!--=============== BOXICONS ===============-->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -24,6 +43,7 @@
 </head>
 
 <body>
+    <script src="assets/js/theme-early.js"></script>
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -75,8 +95,10 @@
                 </ul>
             </div>
 
-            <!--=============== theme change button ===============-->
-            <i href="" class='bx bx-moon change-theme change-theme-button' id="theme-button"></i>
+            <div class="nav__theme-actions">
+                <a href="daily-log.html" class="nav__daily-log">Daily log</a>
+                <i href="" class='bx bx-moon change-theme change-theme-button' id="theme-button"></i>
+            </div>
 
         </nav>
     </header>
@@ -1204,10 +1226,10 @@
 
     <!--=============== TYPEWRITER ===============-->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src="assets/js/scripts.js"></script>
 
-    <!--=============== MAIN JS ===============-->
+    <!--=============== MAIN JS (before scripts.js so ScrollReveal runs before typewriter) ===============-->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>

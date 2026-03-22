@@ -1,0 +1,577 @@
+.daily-log {
+  padding-top: 6.5rem;
+}
+
+.daily-log__container {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.daily-log__heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.daily-log__app {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.daily-log__intro,
+.daily-log__calendar-card,
+.daily-log__entry-card {
+  background-color: var(--container-color);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.daily-log__intro p {
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+}
+
+.daily-log__owner-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.daily-log__owner-button {
+  background: transparent;
+  color: var(--text-color-light);
+  border: 1px solid hsl(var(--second-hue), 8%, 35%);
+  border-radius: 999px;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1;
+  opacity: 0.75;
+  transition: border-color 0.25s ease, opacity 0.25s ease, color 0.25s ease;
+}
+
+.daily-log__owner-button:hover {
+  opacity: 1;
+  color: var(--first-color);
+  border-color: var(--first-color);
+}
+
+.daily-log__owner-icon {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.daily-log__owner-icon--animate {
+  animation: owner-lock-pop 0.3s ease;
+}
+
+@keyframes owner-lock-pop {
+  0% {
+    transform: scale(0.9) rotate(-12deg);
+  }
+  60% {
+    transform: scale(1.12) rotate(8deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.daily-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.daily-log__calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.daily-log__month-label {
+  margin: 0;
+  font-size: var(--h3-font-size);
+}
+
+.daily-log__month-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background-color: hsl(var(--second-hue), 32%, 18%);
+  color: var(--title-color);
+}
+
+.daily-log__weekday-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+
+.daily-log__calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.35rem;
+}
+
+.daily-log__day {
+  min-height: 2.5rem;
+  border-radius: 0.6rem;
+  border: 1px solid transparent;
+  background-color: hsl(var(--second-hue), 32%, 16%);
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+
+.daily-log__day:hover {
+  border-color: var(--first-color);
+}
+
+.daily-log__day--muted {
+  opacity: 0.4;
+}
+
+.daily-log__day--selected {
+  background-color: var(--first-color);
+  color: hsl(var(--second-hue), 15%, 15%);
+  font-weight: var(--font-semibold);
+}
+
+.daily-log__day--saved::after {
+  content: "";
+  display: block;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  margin: 0.2rem auto 0;
+  background-color: var(--first-color);
+}
+
+.daily-log__day--selected.daily-log__day--saved::after {
+  background-color: hsl(var(--second-hue), 15%, 15%);
+}
+
+.daily-log__date-heading {
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid hsla(var(--second-hue), 15%, 45%, 0.2);
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-semibold);
+}
+
+.daily-log__entry-note {
+  margin-bottom: 1rem;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+}
+
+.daily-log__public {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.daily-log__section {
+  margin: 0;
+}
+
+.daily-log__section-title {
+  margin: 0 0 0.45rem;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-color-light);
+}
+
+.daily-log__section-title--private {
+  margin-top: 0.75rem;
+}
+
+.daily-log__section-title--private:first-of-type {
+  margin-top: 0;
+}
+
+.daily-log__badge {
+  display: inline-block;
+  margin-left: 0.25rem;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+  color: var(--first-color);
+  background: hsla(var(--first-hue), 60%, 50%, 0.12);
+  border: 1px solid hsla(var(--first-hue), 50%, 55%, 0.25);
+}
+
+.daily-log__section-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid hsla(var(--second-hue), 18%, 42%, 0.35);
+  background: hsla(var(--second-hue), 28%, 14%, 0.65);
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.04);
+}
+
+.daily-log__section-panel--single {
+  gap: 0;
+}
+
+.daily-log__section-panel--private {
+  border-style: dashed;
+  background: hsla(var(--second-hue), 28%, 12%, 0.5);
+}
+
+.daily-log__section-text {
+  margin: 0;
+  min-height: 1.5rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+}
+
+.daily-log__public-value {
+  min-height: 2.25rem;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  padding: 0;
+  font-size: inherit;
+}
+
+.daily-log__public-value--empty {
+  color: var(--text-color-light);
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.daily-log__link-slot {
+  padding-top: 0.65rem;
+  margin-top: 0.1rem;
+  border-top: 1px solid hsla(var(--second-hue), 15%, 45%, 0.18);
+}
+
+.daily-log__link-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  border: 1px solid hsla(var(--first-hue), 55%, 58%, 0.45);
+  color: var(--first-color);
+  background: hsla(var(--first-hue), 60%, 50%, 0.1);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.daily-log__link-chip:hover:not(.daily-log__link-chip--empty) {
+  background: hsla(var(--first-hue), 60%, 50%, 0.18);
+  border-color: hsla(var(--first-hue), 55%, 58%, 0.65);
+}
+
+.daily-log__link-chip--empty {
+  border-color: transparent;
+  background: transparent;
+  color: var(--text-color-light);
+  font-style: italic;
+  font-weight: 400;
+  pointer-events: none;
+  cursor: default;
+}
+
+.daily-log__form {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.daily-log__form-section {
+  display: grid;
+  gap: 0.45rem;
+}
+
+#private-fields {
+  display: grid;
+  gap: 0.85rem;
+}
+
+#stock-reflection-wrapper {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.daily-log__form .daily-log__section-title {
+  cursor: default;
+}
+
+.daily-log__section-textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 4rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: var(--normal-font-size);
+  line-height: 1.55;
+}
+
+.daily-log__section-textarea::placeholder {
+  color: var(--text-color-light);
+  opacity: 0.75;
+}
+
+.daily-log__section-textarea:focus {
+  outline: none;
+}
+
+.daily-log__url-input {
+  width: 100%;
+  margin: 0;
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.5rem;
+  font-size: var(--small-font-size);
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  border: 1px dashed hsla(var(--second-hue), 20%, 48%, 0.45);
+  background: hsla(var(--second-hue), 32%, 10%, 0.55);
+  color: var(--text-color);
+}
+
+.daily-log__url-input::placeholder {
+  color: var(--text-color-light);
+  opacity: 0.8;
+  font-family: var(--body-font);
+}
+
+.daily-log__url-input:focus {
+  border-color: var(--first-color);
+  border-style: solid;
+  outline: none;
+}
+
+.daily-log__input {
+  width: 100%;
+  border-radius: 0.65rem;
+  border: 1px solid hsla(var(--second-hue), 18%, 42%, 0.35);
+  background-color: hsla(var(--second-hue), 28%, 14%, 0.65);
+  color: var(--text-color);
+  padding: 0.65rem 0.75rem;
+}
+
+.daily-log__input:focus {
+  border-color: var(--first-color);
+  outline: none;
+}
+
+.light-theme .daily-log__input {
+  background-color: #ffffff;
+  border-color: hsla(var(--second-hue), 12%, 75%, 0.65);
+}
+
+.daily-log__actions {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.daily-log__save-status {
+  min-height: 1.3rem;
+  margin-top: 0.85rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+}
+
+.daily-log__auth-status {
+  min-height: 0;
+  margin-top: 0.35rem;
+}
+
+.daily-log__helper {
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+  margin-top: -0.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.light-theme .daily-log__day,
+.light-theme .daily-log__month-btn {
+  background-color: #ffffff;
+}
+
+/* Higher specificity than `.light-theme .daily-log__day` so selected / saved aren’t washed out */
+.light-theme .daily-log__day.daily-log__day--selected {
+  background-color: var(--first-color);
+  color: hsl(var(--second-hue), 15%, 15%);
+  border-color: hsla(var(--first-hue), 55%, 48%, 0.45);
+}
+
+.light-theme .daily-log__day--saved:not(.daily-log__day--selected) {
+  background-color: hsla(var(--first-hue), 70%, 92%, 0.9);
+  border-color: hsla(var(--first-hue), 50%, 72%, 0.45);
+}
+
+.light-theme .daily-log__day--selected.daily-log__day--saved::after {
+  background-color: hsl(var(--second-hue), 15%, 18%);
+}
+
+.light-theme .daily-log__section-panel {
+  background: hsl(var(--second-hue), 100%, 99%);
+  border-color: hsla(var(--second-hue), 12%, 75%, 0.65);
+  box-shadow: none;
+}
+
+.light-theme .daily-log__section-panel--private {
+  background: hsl(var(--second-hue), 40%, 97%);
+}
+
+.light-theme .daily-log__url-input {
+  background: hsl(var(--second-hue), 30%, 97%);
+  border-color: hsla(var(--second-hue), 12%, 70%, 0.55);
+}
+
+.light-theme .daily-log__link-chip:not(.daily-log__link-chip--empty) {
+  background: hsla(var(--first-hue), 60%, 50%, 0.12);
+}
+
+.hidden {
+  display: none;
+}
+
+.daily-log__modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: grid;
+  place-items: center;
+  z-index: 1200;
+  padding: 1rem;
+}
+
+.daily-log__modal-card {
+  width: min(520px, 100%);
+  background-color: var(--container-color);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+#auth-title {
+  margin-bottom: 0.55rem;
+}
+
+.daily-log__modal.hidden {
+  display: none;
+}
+
+.daily-log__load-error {
+  margin: 0;
+  text-align: center;
+  font-size: var(--small-font-size);
+  color: hsl(350, 65%, 52%);
+  /* Full-width row so the 2-column calendar | entry layout isn’t broken */
+  grid-column: 1 / -1;
+}
+
+.daily-log__load-error:empty {
+  display: none;
+}
+
+.light-theme .daily-log__load-error {
+  color: hsl(350, 55%, 40%);
+}
+
+.daily-log__edit-intro code {
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  background: hsla(var(--second-hue), 20%, 40%, 0.25);
+}
+
+.light-theme .daily-log__edit-intro code {
+  background: hsla(var(--second-hue), 15%, 85%, 0.9);
+}
+
+.daily-log__edit-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+  margin-top: 0.85rem;
+}
+
+.daily-log__import-label {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.daily-log__import-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.daily-log__badge--public {
+  color: hsl(145, 45%, 42%);
+  background: hsla(145, 45%, 45%, 0.12);
+  border-color: hsla(145, 40%, 40%, 0.28);
+}
+
+.light-theme .daily-log__badge--public {
+  color: hsl(145, 50%, 28%);
+}
+
+@media screen and (min-width: 900px) {
+  .daily-log__app {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+  }
+
+  .daily-log__intro {
+    grid-column: 1 / -1;
+  }
+
+  .daily-log__edit-intro {
+    grid-column: 1 / -1;
+  }
+}

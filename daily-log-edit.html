@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="assets/img/a.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#f0aace">
+    <script>
+    (function () {
+      try {
+        var FIX = "theme-label-fix";
+        var KEY = "selected-theme";
+        if (!localStorage.getItem(FIX)) {
+          var t = localStorage.getItem(KEY);
+          if (t === "dark") localStorage.setItem(KEY, "light");
+          else if (t === "light") localStorage.setItem(KEY, "dark");
+          localStorage.setItem(FIX, "1");
+        }
+        if (localStorage.getItem(KEY) === "light") {
+          document.documentElement.classList.add("light-theme");
+        }
+      } catch (e) {}
+    })();
+    </script>
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/daily-log.css">
+    <title>Edit Daily Log (private) | Amelia Li</title>
+</head>
+<body>
+    <script src="assets/js/theme-early.js"></script>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Amelia</a>
+            <div class="nav__theme-actions daily-nav__actions">
+                <a href="daily-log.html" class="nav__daily-log">View public log</a>
+                <a href="index.html" class="nav__daily-log">Portfolio</a>
+                <i class="bx bx-moon change-theme change-theme-button" id="theme-button"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="section daily-log">
+            <div class="daily-log__heading container">
+                <div>
+                    <span class="section__subtitle">Not linked from the site</span>
+                    <h1 class="section__title">Edit daily log</h1>
+                </div>
+            </div>
+
+            <div class="daily-log__container container">
+                <div id="daily-app" class="daily-log__app">
+                    <div class="daily-log__intro daily-log__edit-intro">
+                        <p>
+                            <strong>Public</strong> fields are exported in the JSON you download — that’s what visitors see after you commit it to
+                            <code>assets/data/daily-log.json</code>.
+                            <strong>SQL / Python / LeetCode</strong> stay in <em>this browser only</em> (localStorage), never in the repo.
+                        </p>
+                        <div class="daily-log__edit-toolbar">
+                            <button type="button" id="download-json" class="button">Download daily-log.json</button>
+                            <label class="button button--ghost daily-log__import-label">
+                                Import JSON
+                                <input id="import-json" type="file" accept="application/json,.json" class="daily-log__import-input" aria-label="Import daily-log JSON file">
+                            </label>
+                        </div>
+                        <p id="edit-load-banner" class="daily-log__load-error" role="status"></p>
+                    </div>
+
+                    <div class="daily-log__calendar-card">
+                        <div class="daily-log__calendar-header">
+                            <button id="prev-month" class="daily-log__month-btn" aria-label="Previous month">
+                                <i class="bx bx-chevron-left"></i>
+                            </button>
+                            <h2 id="month-label" class="daily-log__month-label"></h2>
+                            <button id="next-month" class="daily-log__month-btn" aria-label="Next month">
+                                <i class="bx bx-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="daily-log__weekday-row">
+                            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                        </div>
+                        <div id="calendar-grid" class="daily-log__calendar-grid"></div>
+                    </div>
+
+                    <div id="entry-panel" class="daily-log__entry-card" aria-live="polite">
+                        <h3 id="selected-date-label" class="daily-log__date-heading">Select a date</h3>
+
+                        <div id="public-view" class="daily-log__public hidden">
+                            <article class="daily-log__section">
+                                <h4 class="daily-log__section-title">System design</h4>
+                                <div class="daily-log__section-panel">
+                                    <p id="public-system-design" class="daily-log__section-text daily-log__public-value"></p>
+                                    <div class="daily-log__link-slot">
+                                        <a id="public-system-design-link" class="daily-log__link-chip daily-log__link-chip--empty">—</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="daily-log__section">
+                                <h4 class="daily-log__section-title">Project</h4>
+                                <div class="daily-log__section-panel">
+                                    <p id="public-project" class="daily-log__section-text daily-log__public-value"></p>
+                                    <div class="daily-log__link-slot">
+                                        <a id="public-project-github-link" class="daily-log__link-chip daily-log__link-chip--empty">—</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="daily-log__section" id="public-stock-wrapper">
+                                <h4 class="daily-log__section-title">Day trading</h4>
+                                <div class="daily-log__section-panel daily-log__section-panel--single">
+                                    <p id="public-stock-reflection" class="daily-log__section-text daily-log__public-value"></p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <form id="daily-form" class="daily-log__form">
+                            <div class="daily-log__form-section">
+                                <label class="daily-log__section-title" for="system-design">System design <span class="daily-log__badge daily-log__badge--public">public</span></label>
+                                <div class="daily-log__section-panel">
+                                    <textarea id="system-design" class="daily-log__section-textarea" rows="3" placeholder="Notes, prompt, takeaway…"></textarea>
+                                    <input id="system-design-link" type="url" class="daily-log__url-input" placeholder="Drawing link (Google Drive, etc.)" inputmode="url" autocomplete="url">
+                                </div>
+                            </div>
+
+                            <div class="daily-log__form-section">
+                                <label class="daily-log__section-title" for="project-work">Project <span class="daily-log__badge daily-log__badge--public">public</span></label>
+                                <div class="daily-log__section-panel">
+                                    <textarea id="project-work" class="daily-log__section-textarea" rows="3" placeholder="What you shipped or learned today…"></textarea>
+                                    <input id="project-github-link" type="url" class="daily-log__url-input" placeholder="GitHub repo or project URL" inputmode="url" autocomplete="url">
+                                </div>
+                            </div>
+
+                            <div id="private-fields" class="daily-log__form-section">
+                                <label class="daily-log__section-title daily-log__section-title--private" for="sql-question">SQL <span class="daily-log__badge">this device only</span></label>
+                                <div class="daily-log__section-panel daily-log__section-panel--private">
+                                    <textarea id="sql-question" class="daily-log__section-textarea" rows="2" placeholder="Question or concept"></textarea>
+                                </div>
+                                <label class="daily-log__section-title daily-log__section-title--private" for="python-data">Python <span class="daily-log__badge">this device only</span></label>
+                                <div class="daily-log__section-panel daily-log__section-panel--private">
+                                    <textarea id="python-data" class="daily-log__section-textarea" rows="2" placeholder="Practice or snippet"></textarea>
+                                </div>
+                                <label class="daily-log__section-title daily-log__section-title--private" for="leetcode">LeetCode <span class="daily-log__badge">this device only</span></label>
+                                <div class="daily-log__section-panel daily-log__section-panel--private">
+                                    <textarea id="leetcode" class="daily-log__section-textarea" rows="2" placeholder="Problem / pattern"></textarea>
+                                </div>
+                            </div>
+
+                            <div id="stock-reflection-wrapper" class="daily-log__form-section">
+                                <label class="daily-log__section-title" for="stock-reflection">Day trading <span class="daily-log__badge daily-log__badge--public">public</span></label>
+                                <div class="daily-log__section-panel">
+                                    <textarea id="stock-reflection" class="daily-log__section-textarea" rows="2" placeholder="Market notes (weekdays)"></textarea>
+                                </div>
+                            </div>
+
+                            <div id="owner-actions" class="daily-log__actions">
+                                <button type="submit" class="button">Save day</button>
+                                <button type="button" id="clear-day" class="button button--ghost">Clear day</button>
+                            </div>
+                        </form>
+
+                        <p id="save-status" class="daily-log__save-status"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/daily-log-edit.js"></script>
+</body>
+</html>

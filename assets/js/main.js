@@ -183,30 +183,15 @@ const themeButton = document.getElementById("theme-button");
 const lightTheme = "light-theme";
 const iconTheme = "bx-sun";
 
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
-
-// We obtain the current theme that the interface has by validating the light-theme class
+// Theme: inline <head> + theme-early.js set html/body; icon finalized in theme-early.
 const getCurrentTheme = () =>
-  document.body.classList.contains(lightTheme) ? "dark" : "light";
+  document.documentElement.classList.contains(lightTheme) ? "light" : "dark";
 const getCurrentIcon = () =>
   themeButton.classList.contains(iconTheme) ? "bx bx-moon" : "bx bx-sun";
 
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the light
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    lightTheme
-  );
-  themeButton.classList[selectedIcon === "bx bx-moon" ? "add" : "remove"](
-    iconTheme
-  );
-}
-
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
-  // Add or remove the light / icon theme
+  document.documentElement.classList.toggle(lightTheme);
   document.body.classList.toggle(lightTheme);
   themeButton.classList.toggle(iconTheme);
   // We save the theme and the current icon that the user chose
@@ -215,16 +200,10 @@ themeButton.addEventListener("click", () => {
 });
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-  origin: "top",
-  distance: "60px",
-  duration: 2500,
-  delay: 400,
-  reset: true,
-});
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (!prefersReducedMotion) {
+try {
+  if (!prefersReducedMotion && typeof ScrollReveal !== "undefined") {
   const sr = ScrollReveal({
     origin: "top",
     distance: "32px",
@@ -246,6 +225,19 @@ sr.reveal(`.nav__menu`, {
     scale: 0.98,
     origin: "bottom",
     distance: "20px",
+  });
+
+sr.reveal(`.section__subtitle, .section__title`, {
+  delay: 70,
+  origin: "top",
+  distance: "20px",
+  interval: 40,
+});
+  sr.reveal(`.section__subtitle, .section__title`, {
+    delay: 90,
+    origin: "top",
+    distance: "12px",
+    interval: 35,
   });
 
 sr.reveal(`.home__data`);
@@ -303,7 +295,19 @@ sr.reveal(`.skills__content`, {
     interval: 100,
   });
 
-sr.reveal(`.experience__title, experience__button`, {
+sr.reveal(`.experience__container`, {
+  delay: 100,
+  scale: 0.97,
+  origin: "bottom",
+  distance: "28px",
+});
+  sr.reveal(`.experience__container`, {
+    delay: 120,
+    scale: 0.99,
+    origin: "bottom",
+  });
+
+sr.reveal(`.experience__title, .experience__button`, {
   delay: 100,
   scale: 0.9,
   origin: "top",
@@ -314,6 +318,17 @@ sr.reveal(`.experience__title, experience__button`, {
     scale: 0.97,
     origin: "top",
     interval: 80,
+  });
+
+sr.reveal(`.work__filters`, {
+  delay: 100,
+  origin: "top",
+  distance: "20px",
+});
+  sr.reveal(`.work__filters`, {
+    delay: 120,
+    origin: "top",
+    distance: "12px",
   });
 
 sr.reveal(`.work__card`, {
@@ -375,6 +390,16 @@ sr.reveal(`.footer, footer__container`, {
     delay: 120,
     scale: 0.97,
     origin: "bottom",
+  });
+  }
+} finally {
+  /* SR often applies initial styles on the next frame; wait so we don’t lift the
+     veil one frame too early (visible “full page” flash). */
+  const done = () => document.documentElement.classList.remove("sr-pending");
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(done);
+    });
   });
 }
 

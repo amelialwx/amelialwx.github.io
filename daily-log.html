@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="sr-pending">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/a.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#f0aace">
+    <script>
+    (function () {
+      try {
+        var FIX = "theme-label-fix";
+        var KEY = "selected-theme";
+        if (!localStorage.getItem(FIX)) {
+          var t = localStorage.getItem(KEY);
+          if (t === "dark") localStorage.setItem(KEY, "light");
+          else if (t === "light") localStorage.setItem(KEY, "dark");
+          localStorage.setItem(FIX, "1");
+        }
+        if (localStorage.getItem(KEY) === "light") {
+          document.documentElement.classList.add("light-theme");
+        }
+      } catch (e) {}
+    })();
+    </script>
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/daily-log.css">
+    <title>My Daily Log | Amelia Li</title>
+</head>
+<body>
+    <script src="assets/js/theme-early.js"></script>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Amelia</a>
+            <div class="nav__theme-actions daily-nav__actions">
+                <a href="index.html" class="nav__daily-log">Back to Portfolio</a>
+                <i class="bx bx-moon change-theme change-theme-button" id="theme-button"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="section daily-log">
+            <div class="daily-log__heading container">
+                <div>
+                    <span class="section__subtitle">Amelia's daily check-in</span>
+                    <h1 class="section__title">My Daily Log</h1>
+                </div>
+            </div>
+
+            <div class="daily-log__container container">
+                <div id="daily-app" class="daily-log__app">
+                    <div class="daily-log__intro">
+                        <p>
+                            Trying to stay consistent with my learning and growth.
+                        </p>
+                    </div>
+
+                    <p id="daily-log-load-error" class="daily-log__load-error" role="status"></p>
+
+                    <div class="daily-log__calendar-card">
+                        <div class="daily-log__calendar-header">
+                            <button id="prev-month" class="daily-log__month-btn" aria-label="Previous month">
+                                <i class="bx bx-chevron-left"></i>
+                            </button>
+                            <h2 id="month-label" class="daily-log__month-label"></h2>
+                            <button id="next-month" class="daily-log__month-btn" aria-label="Next month">
+                                <i class="bx bx-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="daily-log__weekday-row">
+                            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                        </div>
+                        <div id="calendar-grid" class="daily-log__calendar-grid"></div>
+                    </div>
+
+                    <div id="entry-panel" class="daily-log__entry-card" aria-live="polite">
+                        <h3 id="selected-date-label" class="daily-log__date-heading">Select a date to view your update</h3>
+
+                        <div id="public-view" class="daily-log__public">
+                            <article class="daily-log__section">
+                                <h4 class="daily-log__section-title">System design</h4>
+                                <div class="daily-log__section-panel">
+                                    <p id="public-system-design" class="daily-log__section-text daily-log__public-value"></p>
+                                    <div class="daily-log__link-slot">
+                                        <a id="public-system-design-link" class="daily-log__link-chip daily-log__link-chip--empty">—</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="daily-log__section">
+                                <h4 class="daily-log__section-title">Project</h4>
+                                <div class="daily-log__section-panel">
+                                    <p id="public-project" class="daily-log__section-text daily-log__public-value"></p>
+                                    <div class="daily-log__link-slot">
+                                        <a id="public-project-github-link" class="daily-log__link-chip daily-log__link-chip--empty">—</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="daily-log__section" id="public-stock-wrapper">
+                                <h4 class="daily-log__section-title">Day trading</h4>
+                                <div class="daily-log__section-panel daily-log__section-panel--single">
+                                    <p id="public-stock-reflection" class="daily-log__section-text daily-log__public-value"></p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="assets/js/daily-log.js"></script>
+</body>
+</html>
