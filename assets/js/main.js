@@ -156,27 +156,50 @@ let swiperEducation = new Swiper(".education__container", {
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 const sections = document.querySelectorAll("section[id]");
+const NAV_HEADER_OFFSET = 58;
 
 function scrollActive() {
   const scrollY = window.pageYOffset;
 
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
-      sectionId = current.getAttribute("id");
+  /* Last section whose top we’ve scrolled past (fixes home never active at top:
+     old code used scrollY > sectionTop, which fails when sectionTop > 0). */
+  let currentSectionId = sections[0]?.getAttribute("id") || "home";
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
-    } else {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
+  sections.forEach((current) => {
+    const sectionTop = current.offsetTop - NAV_HEADER_OFFSET;
+    if (scrollY >= sectionTop - 1) {
+      currentSectionId = current.getAttribute("id");
+    }
+  });
+
+  document.querySelectorAll(".nav__menu .nav__link").forEach((link) => {
+    const href = link.getAttribute("href");
+    link.classList.remove("active-link");
+    if (href === `#${currentSectionId}`) {
+      link.classList.add("active-link");
     }
   });
 }
+
 window.addEventListener("scroll", scrollActive);
+scrollActive();
+
+/* #home: native hash does nothing when already at top; always scroll to top + refresh spy */
+document.querySelectorAll('.nav__menu .nav__link[href="#home"]').forEach((homeLink) => {
+  homeLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    const path = window.location.pathname + window.location.search + "#home";
+    if (history.replaceState) {
+      history.replaceState(null, "", path);
+    } else {
+      window.location.hash = "home";
+    }
+    /* scroll listener updates active link; instant scroll still fires scroll in most browsers */
+    requestAnimationFrame(() => scrollActive());
+  });
+});
 
 /*=============== LIGHT DARK THEME ===============*/
 const themeButton = document.getElementById("theme-button");
