@@ -29,7 +29,7 @@
   };
   const publicStockWrapper = document.getElementById("public-stock-wrapper");
 
-  const DATA_URL = "assets/data/daily-log.json";
+  const DATA_URL = "../assets/data/daily-log.json";
   const EMPTY_ENTRIES = {};
 
   const today = new Date();

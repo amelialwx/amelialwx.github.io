@@ -49,7 +49,7 @@
     stockReflection: document.getElementById("public-stock-reflection"),
   };
 
-  const DATA_URL = "assets/data/daily-log.json";
+  const DATA_URL = "../assets/data/daily-log.json";
   const PRIVATE_LOCAL_KEY = "daily-log-private-local-v1";
   const EMPTY_ENTRIES = {};
 
@@ -200,7 +200,7 @@
 
     /* Form: always show so weekday notes can be edited after viewing a weekend, etc. */
     setVisibleAsGrid(stockReflectionWrapper, true);
-    /* Public preview only: hide day-trading block on weekends (matches daily-log.html) */
+    /* Public preview only: hide day-trading block on weekends (matches log/index.html) */
     setVisibleAsGrid(publicStockWrapper, !weekend);
 
     publicView.classList.add("hidden");
