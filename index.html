@@ -8,8 +8,8 @@
     <link rel="icon" href="assets/img/a.png">
 
     <!--=============== FAVICON ===============-->
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#f0aace">
+    <meta name="msapplication-TileColor" content="#0b121e">
+    <meta name="theme-color" content="#0b121e">
 
     <!-- Theme before any stylesheet so first paint uses correct CSS variables (no dark flash) -->
     <script>
@@ -23,8 +23,13 @@
           else if (t === "light") localStorage.setItem(KEY, "dark");
           localStorage.setItem(FIX, "1");
         }
-        if (localStorage.getItem(KEY) === "light") {
+        var light = localStorage.getItem(KEY) === "light";
+        if (light) {
           document.documentElement.classList.add("light-theme");
+        }
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) {
+          themeMeta.setAttribute("content", light ? "#fcfcfd" : "#0b121e");
         }
       } catch (e) {}
     })();
@@ -655,8 +660,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="skills__container container grid">
-                    <div class="skills__content">
+
+                <div class="skills__content">
                         <h3 class="skills__title">DevOps and MLOps</h3>
     
                         <div class="skills__box">
@@ -728,10 +733,9 @@
     
                             </div>
                         </div>
-                    </div>
-                </div>    
-                <div class="skills__container container grid">
-                    <div class="skills__content">
+                </div>
+
+                <div class="skills__content">
                         <h3 class="skills__title">Data Science Tools and Frameworks</h3>
     
                         <div class="skills__box">
@@ -857,6 +861,7 @@
             <h2 class="section__title">Education</h2>
 
             <div class="education__container container swiper">
+                <div class="swiper-wrapper">
                 <div class="education__card swiper-slide">
                     <img src="assets/img/harvard.png" alt="" class="education__img">
 
@@ -1078,6 +1083,8 @@
                         </li>
                     </ul>
                 </div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
 
         </section>

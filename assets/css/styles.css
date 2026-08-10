@@ -69,7 +69,14 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  background-color: var(--body-color);
+  width: 100%;
+}
+
+@media (hover: none) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body,
@@ -85,7 +92,9 @@ body {
   color: var(--text-color);
   transition: 0.4s; /* for light mode animation */
   overflow-x: hidden;
+  width: 100%;
   max-width: 100%;
+  position: relative;
 }
 
 /*
@@ -202,9 +211,13 @@ body.light-theme {
 }
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
+  width: 100%;
   max-width: 968px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 .grid {
@@ -213,7 +226,9 @@ body.light-theme {
 }
 
 .main {
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .section {
@@ -349,6 +364,11 @@ body.light-theme {
 .home__education {
   color: var(--text-color);
   margin-bottom: 2.5rem;
+  /* Reserve space so typewriter line changes don’t shove the hero / page scroll */
+  min-height: 4.5em;
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home__name {
@@ -422,7 +442,7 @@ body.light-theme {
 
 .home__scroll {
   color: var(--first-color);
-  right: 0;
+  right: 0.25rem;
   bottom: 4rem;
   display: grid;
   row-gap: 2.25rem;
@@ -436,6 +456,17 @@ body.light-theme {
 .home__scroll-name {
   font-size: var(--smaller-font-size);
   transform: rotate(-90deg);
+}
+
+@media screen and (max-width: 768px) {
+  /* Rotated "Scroll Down" regularly blows past the viewport on phones */
+  .home__scroll {
+    display: none;
+  }
+
+  .home__social {
+    left: 0.25rem;
+  }
 }
 
 /*=============== BUTTONS ===============*/
@@ -477,7 +508,7 @@ body.light-theme {
 
 .about__info {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -510,12 +541,18 @@ body.light-theme {
 .skills__container {
   row-gap: 2rem;
   padding-top: 1rem;
+  width: 100%;
 }
 
 .skills__content {
   background-color: var(--container-color);
   padding: 1.5rem;
   border-radius: 1.25rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .skills__title {
@@ -530,28 +567,36 @@ body.light-theme {
   display: flex;
   justify-content: center;
   column-gap: 2.5rem;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .skills__group {
   display: grid;
   align-content: flex-start;
   row-gap: 1rem;
+  min-width: 0;
 }
 
 .skills__data {
   display: flex;
   column-gap: 0.5rem;
+  min-width: 0;
 }
 
 .skills .bxs-badge-check {
   font-size: 1rem;
   color: var(--first-color);
+  flex-shrink: 0;
 }
 
 .skills__name {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
   line-height: 18px;
+  overflow-wrap: anywhere;
 }
 
 .skills__level {
@@ -560,20 +605,23 @@ body.light-theme {
 
 /*=============== experience ===============*/
 .experience__container {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   padding-top: 1rem;
+  width: 100%;
 }
 
 .experience__card {
   background-color: var(--container-color);
   padding: 3rem 1.5rem 1.5em;
   border-radius: 1.25rem;
+  min-width: 0;
 }
 
 .experience__title {
   font-size: var(--h3-font-size);
   margin-bottom: 2.5rem;
+  overflow-wrap: anywhere;
 }
 
 .experience__button {
@@ -606,6 +654,7 @@ body.light-theme {
   z-index: var(--z-modal);
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
 }
 
 .experience__modal-content {
@@ -666,19 +715,23 @@ body.light-theme {
 .active-exp-modal {
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 
 /*=============== WORK ===============*/
 
 .work__container {
   padding-top: 1rem;
+  width: 100%;
 }
 
 .work__filters {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   column-gap: 0.75rem;
+  row-gap: 0.5rem;
   margin-bottom: 2rem;
 }
 
@@ -694,11 +747,15 @@ body.light-theme {
   background-color: var(--container-color);
   padding: 1rem;
   border-radius: 1rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .work__img {
   border-radius: 1rem;
   margin-bottom: 0.75rem;
+  width: 100%;
+  height: auto;
 }
 
 .work__title {
@@ -738,6 +795,7 @@ body.light-theme {
   z-index: var(--z-modal);
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
 }
 
 .work__modal-content {
@@ -798,6 +856,7 @@ body.light-theme {
 .active-work-modal {
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* Active item work*/
@@ -807,11 +866,18 @@ body.light-theme {
 }
 
 /*=============== EDUCATION ===============*/
+.education__container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
 .education__card {
   background-color: var(--container-color);
   padding: 1.25rem 1.5rem;
   border-radius: 1.5rem;
   margin-bottom: 3rem;
+  height: auto;
 }
 
 .education__img {
@@ -945,6 +1011,8 @@ body.light-theme {
 /*=============== FOOTER ===============*/
 .footer {
   background-color: var(--first-color);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .footer__container {
@@ -965,15 +1033,22 @@ body.light-theme {
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 1.5rem;
+  flex-wrap: wrap;
+  column-gap: 1.25rem;
+  row-gap: 0.75rem;
   margin-bottom: 2rem;
+  max-width: 100%;
+  padding-inline: 0.25rem;
 }
 
 .footer__social {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   column-gap: 1.25rem;
+  row-gap: 0.75rem;
+  max-width: 100%;
 }
 
 .footer__social-link {
@@ -1061,8 +1136,8 @@ body.light-theme {
   }
 
   .experience__container {
-    grid-template-columns: 145px;
-    justify-content: center;
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: stretch;
   }
 
   .work__item {
@@ -1074,14 +1149,16 @@ body.light-theme {
   }
 }
 
+@media screen and (min-width: 480px) {
+  .experience__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media screen and (min-width: 435px) {
   .work__container {
     justify-content: center;
-    grid-template-columns: repeat(2, max-content);
-  }
-
-  .work__img {
-    width: 165px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1093,7 +1170,7 @@ body.light-theme {
   }
 
   .about__info {
-    grid-template-columns: repeat(3, 180px);
+    grid-template-columns: repeat(3, minmax(0, 180px));
     justify-content: center;
   }
 
@@ -1113,7 +1190,9 @@ body.light-theme {
   }
 
   .skills__content {
-    padding: 4rem 8.8rem;
+    padding: 3rem 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .skills__title {
@@ -1122,11 +1201,11 @@ body.light-theme {
   }
 
   .skills__box {
-    column-gap: 5.5rem;
+    column-gap: 2rem;
   }
 
   .experience__container {
-    grid-template-columns: repeat(3, 177px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-content: center;
   }
 
@@ -1141,11 +1220,7 @@ body.light-theme {
 
   .work__container {
     justify-content: center;
-    grid-template-columns: repeat(2, max-content);
-  }
-
-  .work__img {
-    width: 250px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .education__container {
@@ -1156,18 +1231,19 @@ body.light-theme {
 
   .contact__container {
     display: grid;
-    grid-template-columns: 220px 340px;
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
     column-gap: 2rem;
     justify-content: center;
   }
 
   .contact__info {
-    grid-template-columns: 200px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 
   .contact__form {
-    width: 340px;
+    width: 100%;
+    max-width: 340px;
   }
 }
 
@@ -1241,16 +1317,21 @@ body.light-theme {
   }
 
   .skills__container {
-    grid-template-columns: repeat(2, 460px);
-    column-gap: 3rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+    justify-content: center;
+  }
+
+  .skills__content {
+    padding: 2.5rem 2rem;
   }
 
   .skills__title {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .experience__container {
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(3, minmax(0, 300px));
     column-gap: 2rem;
   }
 
@@ -1264,7 +1345,7 @@ body.light-theme {
   }
 
   .work__container {
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3rem;
   }
 
@@ -1281,7 +1362,8 @@ body.light-theme {
   }
 
   .education__container {
-    width: 970px;
+    width: 100%;
+    max-width: 970px;
   }
 
   .education__card {
@@ -1289,12 +1371,13 @@ body.light-theme {
   }
 
   .contact__info {
-    grid-template-columns: 430px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 
   .contact__form {
-    width: 430px;
+    width: 100%;
+    max-width: 430px;
   }
 
   .contact__form-area {
@@ -1302,7 +1385,7 @@ body.light-theme {
   }
 
   .contact__container {
-    grid-template-columns: repeat(2, 430px);
+    grid-template-columns: repeat(2, minmax(0, 430px));
     column-gap: 6rem;
   }
 

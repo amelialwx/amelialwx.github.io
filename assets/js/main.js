@@ -133,6 +133,7 @@ workLinks.forEach((wl) => {
 /*=============== SWIPER EDUCATION ===============*/
 
 let swiperEducation = new Swiper(".education__container", {
+  slidesPerView: 1,
   spaceBetween: 24,
   loop: true,
   grabCursor: true,
@@ -140,16 +141,6 @@ let swiperEducation = new Swiper(".education__container", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
-  },
-
-  breakpoints: {
-    576: {
-      slidesPerView: 2,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 48,
-    },
   },
 });
 
@@ -220,114 +211,101 @@ themeButton.addEventListener("click", () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta) {
+    themeMeta.setAttribute(
+      "content",
+      getCurrentTheme() === "light" ? "#fcfcfd" : "#0b121e"
+    );
+  }
 });
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isMobileViewport = window.matchMedia("(max-width: 768px), (hover: none)").matches;
 
 try {
   if (!prefersReducedMotion && typeof ScrollReveal !== "undefined") {
     const sr = ScrollReveal({
-      origin: "top",
-      distance: "32px",
-      duration: 900,
-      delay: 120,
-      reset: false,
-      viewFactor: 0.2,
-      viewOffset: { top: 50, right: 0, bottom: 80, left: 0 },
-    });
-
-    sr.reveal(`.nav__menu`, {
-      delay: 80,
-      scale: 0.98,
       origin: "bottom",
-      distance: "20px",
+      distance: isMobileViewport ? "40px" : "32px",
+      duration: isMobileViewport ? 1100 : 800,
+      delay: isMobileViewport ? 120 : 80,
+      reset: false,
+      easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+      opacity: 0,
+      scale: 1,
+      viewFactor: isMobileViewport ? 0.2 : 0.05,
+      viewOffset: {
+        top: 0,
+        right: 0,
+        bottom: isMobileViewport ? 40 : -100,
+        left: 0,
+      },
     });
 
     sr.reveal(`.section__subtitle, .section__title`, {
-      delay: 90,
       origin: "top",
-      distance: "12px",
-      interval: 35,
-    });
-
-    sr.reveal(`.home__data`, { delay: 140 });
-    sr.reveal(`.home__handle`, {
-      delay: 180,
-    });
-
-    sr.reveal(`.home__social, .home__scroll`, {
-      delay: 180,
-      origin: "bottom",
+      distance: isMobileViewport ? "28px" : "24px",
+      interval: isMobileViewport ? 80 : 50,
     });
 
     sr.reveal(`.about__img`, {
-      delay: 120,
       origin: "left",
-      scale: 0.97,
+      distance: isMobileViewport ? "48px" : "60px",
     });
 
     sr.reveal(`.about__data, .about__description, .about__button-contact`, {
-      delay: 120,
-      scale: 0.97,
       origin: "right",
+      distance: isMobileViewport ? "48px" : "60px",
     });
 
     sr.reveal(`.skills__content`, {
-      delay: 120,
-      scale: 0.97,
       origin: "bottom",
-      interval: 100,
+      distance: isMobileViewport ? "40px" : "48px",
+      interval: isMobileViewport ? 120 : 100,
     });
 
     sr.reveal(`.experience__container`, {
-      delay: 120,
-      scale: 0.99,
       origin: "bottom",
+      distance: isMobileViewport ? "40px" : "48px",
     });
 
     sr.reveal(`.experience__title, .experience__button`, {
-      delay: 120,
-      scale: 0.97,
       origin: "top",
-      interval: 80,
+      distance: isMobileViewport ? "28px" : "32px",
+      interval: isMobileViewport ? 90 : 70,
     });
 
     sr.reveal(`.work__filters`, {
-      delay: 120,
       origin: "top",
-      distance: "12px",
+      distance: isMobileViewport ? "24px" : "28px",
     });
 
     sr.reveal(`.work__card`, {
-      delay: 120,
-      scale: 0.97,
       origin: "bottom",
-      interval: 100,
+      distance: isMobileViewport ? "40px" : "48px",
+      interval: isMobileViewport ? 110 : 90,
     });
 
     sr.reveal(`.education__container`, {
-      delay: 120,
-      scale: 0.97,
       origin: "bottom",
+      distance: isMobileViewport ? "40px" : "48px",
     });
 
     sr.reveal(`.contact__info, .contact__title-info`, {
-      delay: 120,
-      scale: 0.97,
       origin: "left",
+      distance: isMobileViewport ? "48px" : "60px",
     });
 
     sr.reveal(`.contact__form, .contact__title-form`, {
-      delay: 120,
-      scale: 0.97,
       origin: "right",
+      distance: isMobileViewport ? "48px" : "60px",
     });
 
-    sr.reveal(`.footer, .footer__container`, {
-      delay: 120,
-      scale: 0.97,
+    sr.reveal(`.footer__container`, {
       origin: "bottom",
+      distance: isMobileViewport ? "32px" : "40px",
     });
   }
 } finally {
