@@ -69,6 +69,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body,
@@ -83,6 +84,8 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   transition: 0.4s; /* for light mode animation */
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /*
@@ -266,8 +269,12 @@ body.light-theme {
 .nav__menu {
   position: fixed;
   bottom: 1rem;
+  left: 0;
+  right: 0;
   background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
   width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 4rem;
   padding: 1rem 2.25rem;
   backdrop-filter: blur(10px);
@@ -415,7 +422,7 @@ body.light-theme {
 
 .home__scroll {
   color: var(--first-color);
-  right: -1.5rem;
+  right: 0;
   bottom: 4rem;
   display: grid;
   row-gap: 2.25rem;
@@ -1082,8 +1089,6 @@ body.light-theme {
 @media screen and (min-width: 630px) {
   .nav__menu {
     width: 328px;
-    left: 0;
-    right: 0;
     margin: 0 auto;
   }
 
