@@ -298,23 +298,6 @@ body.light-theme {
   z-index: calc(var(--z-fixed) + 1);
 }
 
-.nav__daily-log {
-  font-size: var(--smaller-font-size);
-  font-weight: var(--font-medium);
-  color: var(--text-color-light);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.2s ease;
-}
-
-.nav__daily-log:hover {
-  color: var(--first-color);
-}
-
-.light-theme .nav__daily-log:hover {
-  color: var(--first-color);
-}
-
 /* Active link */
 .active-link {
   background: linear-gradient(

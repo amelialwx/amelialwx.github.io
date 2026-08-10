@@ -227,193 +227,108 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
 try {
   if (!prefersReducedMotion && typeof ScrollReveal !== "undefined") {
-  const sr = ScrollReveal({
-    origin: "top",
-    distance: "32px",
-    duration: 900,
-    delay: 120,
-    reset: true,
-    viewFactor: 0.2,
-    viewOffset: { top: 50, right: 0, bottom: 80, left: 0 },
-  });
+    const sr = ScrollReveal({
+      origin: "top",
+      distance: "32px",
+      duration: 900,
+      delay: 120,
+      reset: false,
+      viewFactor: 0.2,
+      viewOffset: { top: 50, right: 0, bottom: 80, left: 0 },
+    });
 
-sr.reveal(`.nav__menu`, {
-  delay: 100,
-  scale: 0.1,
-  origin: "bottom",
-  distance: "300px",
-});
-  sr.reveal(`.nav__menu`, {
-    delay: 80,
-    scale: 0.98,
-    origin: "bottom",
-    distance: "20px",
-  });
+    sr.reveal(`.nav__menu`, {
+      delay: 80,
+      scale: 0.98,
+      origin: "bottom",
+      distance: "20px",
+    });
 
-sr.reveal(`.section__subtitle, .section__title`, {
-  delay: 70,
-  origin: "top",
-  distance: "20px",
-  interval: 40,
-});
-  sr.reveal(`.section__subtitle, .section__title`, {
-    delay: 90,
-    origin: "top",
-    distance: "12px",
-    interval: 35,
-  });
+    sr.reveal(`.section__subtitle, .section__title`, {
+      delay: 90,
+      origin: "top",
+      distance: "12px",
+      interval: 35,
+    });
 
-sr.reveal(`.home__data`);
-sr.reveal(`.home__handle`, {
-  delay: 100,
-});
-  sr.reveal(`.home__data`, { delay: 140 });
-  sr.reveal(`.home__handle`, {
-    delay: 180,
-  });
+    sr.reveal(`.home__data`, { delay: 140 });
+    sr.reveal(`.home__handle`, {
+      delay: 180,
+    });
 
-sr.reveal(`.home__social, .home__scroll`, {
-  delay: 100,
-  origin: "bottom",
-});
-  sr.reveal(`.home__social, .home__scroll`, {
-    delay: 180,
-    origin: "bottom",
-  });
+    sr.reveal(`.home__social, .home__scroll`, {
+      delay: 180,
+      origin: "bottom",
+    });
 
-sr.reveal(`.about__img`, {
-  delay: 100,
-  origin: "left",
-  scale: 0.9,
-  distance: "30px",
-});
-  sr.reveal(`.about__img`, {
-    delay: 120,
-    origin: "left",
-    scale: 0.97,
-  });
+    sr.reveal(`.about__img`, {
+      delay: 120,
+      origin: "left",
+      scale: 0.97,
+    });
 
-sr.reveal(`.about__data, .about__description, .about__button-contact`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "right",
-  distance: "30px",
-});
-  sr.reveal(`.about__data, .about__description, .about__button-contact`, {
-    delay: 120,
-    scale: 0.97,
-    origin: "right",
-  });
+    sr.reveal(`.about__data, .about__description, .about__button-contact`, {
+      delay: 120,
+      scale: 0.97,
+      origin: "right",
+    });
 
-sr.reveal(`.skills__content`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "bottom",
-  distance: "30px",
-});
-  sr.reveal(`.skills__content`, {
-    delay: 120,
-    scale: 0.97,
-    origin: "bottom",
-    interval: 100,
-  });
+    sr.reveal(`.skills__content`, {
+      delay: 120,
+      scale: 0.97,
+      origin: "bottom",
+      interval: 100,
+    });
 
-sr.reveal(`.experience__container`, {
-  delay: 100,
-  scale: 0.97,
-  origin: "bottom",
-  distance: "28px",
-});
-  sr.reveal(`.experience__container`, {
-    delay: 120,
-    scale: 0.99,
-    origin: "bottom",
-  });
+    sr.reveal(`.experience__container`, {
+      delay: 120,
+      scale: 0.99,
+      origin: "bottom",
+    });
 
-sr.reveal(`.experience__title, .experience__button`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "top",
-  distance: "30px",
-});
-  sr.reveal(`.experience__title, .experience__button`, {
-    delay: 120,
-    scale: 0.97,
-    origin: "top",
-    interval: 80,
-  });
+    sr.reveal(`.experience__title, .experience__button`, {
+      delay: 120,
+      scale: 0.97,
+      origin: "top",
+      interval: 80,
+    });
 
-sr.reveal(`.work__filters`, {
-  delay: 100,
-  origin: "top",
-  distance: "20px",
-});
-  sr.reveal(`.work__filters`, {
-    delay: 120,
-    origin: "top",
-    distance: "12px",
-  });
+    sr.reveal(`.work__filters`, {
+      delay: 120,
+      origin: "top",
+      distance: "12px",
+    });
 
-sr.reveal(`.work__card`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "bottom",
-  distance: "30px",
-});
-  sr.reveal(`.work__card`, {
-    delay: 120,
-    scale: 0.97,
-    origin: "bottom",
-    interval: 100,
-  });
+    sr.reveal(`.work__card`, {
+      delay: 120,
+      scale: 0.97,
+      origin: "bottom",
+      interval: 100,
+    });
 
-sr.reveal(`.education__container`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "bottom",
-  distance: "30px",
-});
-  sr.reveal(`.education__container`, {
-    delay: 120,
-    scale: 0.97,
-    origin: "bottom",
-  });
+    sr.reveal(`.education__container`, {
+      delay: 120,
+      scale: 0.97,
+      origin: "bottom",
+    });
 
-sr.reveal(`.contact__info, .contact__title-info`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "left",
-  distance: "30px",
-});
-  sr.reveal(`.contact__info, .contact__title-info`, {
-    delay: 120,
-    scale: 0.97,
-    origin: "left",
-  });
+    sr.reveal(`.contact__info, .contact__title-info`, {
+      delay: 120,
+      scale: 0.97,
+      origin: "left",
+    });
 
-sr.reveal(`.contact__form, .contact__title-form`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "right",
-  distance: "30px",
-});
-  sr.reveal(`.contact__form, .contact__title-form`, {
-    delay: 120,
-    scale: 0.97,
-    origin: "right",
-  });
+    sr.reveal(`.contact__form, .contact__title-form`, {
+      delay: 120,
+      scale: 0.97,
+      origin: "right",
+    });
 
-sr.reveal(`.footer, footer__container`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "bottom",
-  distance: "30px",
-});
-  sr.reveal(`.footer, .footer__container`, {
-    delay: 120,
-    scale: 0.97,
-    origin: "bottom",
-  });
+    sr.reveal(`.footer, .footer__container`, {
+      delay: 120,
+      scale: 0.97,
+      origin: "bottom",
+    });
   }
 } finally {
   /* SR often applies initial styles on the next frame; wait so we don’t lift the
